@@ -1,0 +1,30 @@
+// Responsive Width Global Var
+$laptop: 992px;
+$ipad: 768px;
+$mobile: 500px;
+
+//LND Color Pallete
+:root {
+    font-family: "Quicksand", sans-serif;
+
+    --main-pink-color: rgb(115, 71, 193);
+    --main-blue-color: rgb(5, 116, 236);
+    --main-bg-color: rgb(238, 241, 243);
+    --main-white-transparent-color: rgb(255, 255, 255, 0.5);
+
+    //footer colors
+
+    --footer-first-color: rgb(25, 32, 39);
+    --footer-second-color: rgb(37, 43, 48);
+
+    //box-color
+    --box-color: rgb(239, 241, 245);
+    --box-color-tag: rgb(237, 245, 254);
+}
+
+//BORDERS
+//Default border radius
+$border-radius: 0.5rem;
+
+//Trim border
+$border: 0.1px solid rgb(0, 0, 0, 0.2);

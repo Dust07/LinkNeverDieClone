@@ -1,0 +1,41 @@
+.footer-wrapper {
+    width: 100%;
+    padding: 2rem;
+    background: var(--footer-first-color);
+    color: white;
+    > div {
+        margin: 2rem 0;
+        > h1 {
+            margin: 1rem 0;
+        }
+
+        > p {
+            margin: 1rem 0;
+        }
+        > h3 {
+            margin-top: 3rem;
+        }
+        > ul {
+            list-style: none;
+            > li {
+                display: flex;
+                align-items: center;
+                padding: 1rem 0;
+                > p {
+                    padding-left: 1rem;
+                }
+            }
+        }
+    }
+    .social-list {
+        display: flex;
+        > li {
+            // Set tam thoi de demo dep thoi, sau nay xoa
+            color: red;
+            padding: 1rem;
+            margin: 0 0.2rem;
+            border-radius: 100%;
+            background-color: yellow;
+        }
+    }
+}
