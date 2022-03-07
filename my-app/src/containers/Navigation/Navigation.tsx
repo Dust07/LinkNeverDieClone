@@ -9,15 +9,11 @@ function Navigation() {
     return (
         <div className="nav-wrapper">
             <div className="dropDownBtn-wrapper">
-                <button>
-                    <FontAwesomeIcon icon={faBars} className="dropDownBtn" />
-                </button>
+                <FontAwesomeIcon icon={faBars} className="dropDownBtn" />
             </div>
 
             <div className="searchBtn-wrapper">
-                <button>
-                    <FontAwesomeIcon icon={faMagnifyingGlass} className="searchBtn" />
-                </button>
+                <FontAwesomeIcon icon={faMagnifyingGlass} className="searchBtn" />
             </div>
         </div>
     )
