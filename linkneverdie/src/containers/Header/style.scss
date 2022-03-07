@@ -1,4 +1,12 @@
 .header-wrapper {
     width: 100%;
-    background: pink;
+    background: var(--main-bg-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-logo {
+    width: 40%;
+    height: auto;
 }

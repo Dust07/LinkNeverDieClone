@@ -6,10 +6,12 @@ import Games from './containers/Games/Games';
 import Movies from './containers/Movies/Movies';
 import Forum from './containers/Forum/Forum';
 import Footer from './containers/Footer/Footer';
+import Navigation from './containers/Navigation/Navigation';
 function App() {
   return (
     <div className="App">
       <Header />
+      <Navigation />
       <Hero />
       <Games />
       <Movies />
