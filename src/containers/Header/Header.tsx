@@ -7,7 +7,7 @@ function Header() {
     return (
         <div className="header-wrapper">
             <img src={logo} alt="logo" className="header-logo" />
-            <Button name="Đăng nhập" classes="btn login-btn" />
+            <Button name="Đăng nhập" className="btn login-btn" />
         </div>
 
 

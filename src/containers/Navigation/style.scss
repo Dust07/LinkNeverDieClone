@@ -30,21 +30,21 @@
     position: absolute;
     background-color: var(--main-bg-color);
     width: 100%;
-    height: auto;
+    max-height: 0;
     top: 100%;
-    opacity: 0;
-    transition: 2s;
+    overflow: hidden;
+    visibility: hidden;
+    transition: 0.8s;
 
-    > ul {
-        > li {
-            padding: 1rem;
-            border-bottom: $border;
-            display: flex;
-            justify-content: space-between;
-        }
+    .top-level-category {
+        padding: 1rem;
+        border-bottom: $border;
+        display: flex;
+        justify-content: space-between;
     }
 }
-.show {
-    opacity: 1;
-    transition: 2s;
+.show-nav-dropdown {
+    max-height: 100vh;
+    visibility: visible;
+    transition: 0.8s;
 }
