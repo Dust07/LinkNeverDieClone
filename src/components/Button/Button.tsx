@@ -1,13 +1,13 @@
 import "./style.scss"
 
-interface buttonText {
+interface buttonInterface {
     name: string,
     classes: string
 }
 
-function Button({ name, classes }: buttonText) {
+function Button({ name, classes }: buttonInterface) {
     return (
-        <button className={classes}>{name}</button>
+        <button className={`btn ${classes}`}>{name}</button>
     )
 }
 
