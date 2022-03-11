@@ -5,7 +5,7 @@ import { featuredGames, featuresOption } from "../../mockData/mockdata"
 
 function Features() {
     return (
-        <div className="features-wrapper">
+        <div className="container features-wrapper">
             <ul>
                 {featuresOption.map((option, index) => {
                     return (

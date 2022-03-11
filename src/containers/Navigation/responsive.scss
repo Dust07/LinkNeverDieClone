@@ -1,0 +1,12 @@
+@import "../../scss/variables";
+
+@media screen and (min-width: $laptop) {
+    .nav-container {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+    .nav-wrapper {
+        width: 90%;
+    }
+}

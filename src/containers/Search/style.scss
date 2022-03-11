@@ -2,7 +2,6 @@
 
 .search-wrapper {
     position: relative;
-    width: 90%;
     border-radius: $border-radius;
     background: white;
     transform: translateY(-4rem);
@@ -15,7 +14,7 @@
         align-items: center;
         margin: 1rem;
         // Adjust the selection arrow
-        // > select { 
+        // > select {
         //     appearance: none;
         // }
         .search-field {
@@ -32,7 +31,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-bottom: 1rem;
     }
     .search-wrapper-shadow-effect {
         position: absolute;

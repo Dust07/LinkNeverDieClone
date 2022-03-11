@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import "./style.scss"
+import "./responsive.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faBars,
@@ -18,36 +19,49 @@ function Navigation() {
     }
 
     return (
-        <div className="nav-wrapper">
-            <div className="dropDownBtn-wrapper">
-                <FontAwesomeIcon icon={faBars} className="dropDownBtn" onClick={() => { setShowNavBar(!showNavBar) }} />
-            </div>
+        <div className="nav-container">
+            <div className="nav-wrapper">
+                <div className="navBar-wide-layout">
+                    <ul>
+                        {navBar.map((item, index) => {
+                            return (
+                                <li key={index} onClick={handleClickCategory}>
+                                    <div className="top-level-category">
+                                        <h3>{item.context}</h3>
+                                    </div>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div>
+                <div className="searchBtn-wrapper">
+                    <FontAwesomeIcon icon={faMagnifyingGlass} className="searchBtn" />
+                </div>
 
-            <div className="searchBtn-wrapper">
-                <FontAwesomeIcon icon={faMagnifyingGlass} className="searchBtn" />
-            </div>
 
-            <div className={`navbar-wrapper ${showNavBar && "show-nav-dropdown"}`}>
-                <ul>
-                    {navBar.map((item, index) => {
-                        return (
-                            <li key={index} onClick={handleClickCategory}>
-                                <div className="top-level-category">
-                                    <h3>{item.context}</h3>
-                                    {item.submenu || item.gameCategory ?
-                                        <FontAwesomeIcon icon={faChevronDown} />
-                                        : ""}
-                                </div>
-                                {/* {<div className={`submenu-category ${showSubBar && "show"}`}>
+                {/* <div className={`navbar-wrapper ${showNavBar && "show-nav-dropdown"}`}>
+                    <ul>
+                        {navBar.map((item, index) => {
+                            return (
+                                <li key={index} onClick={handleClickCategory}>
+                                    <div className="top-level-category">
+                                        <h3>{item.context}</h3>
+                                        {item.submenu || item.gameCategory ?
+                                            <FontAwesomeIcon icon={faChevronDown} />
+                                            : ""}
+                                    </div>
+                                    {<div className={`submenu-category ${showSubBar && "show"}`}>
                                     <Submenu submenu={item.submenu} gameCategory={item.gameCategory} />
-                                </div>} */}
+                                </div>}
 
-                            </li>
-                        )
-                    })}
-                </ul>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div> */}
             </div>
         </div>
+
     )
 }
 
