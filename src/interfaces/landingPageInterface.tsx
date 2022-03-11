@@ -11,16 +11,19 @@ export interface gameCategoryInterface {
     }[]
 }
 
+export interface submenuInterface {
+
+    context: string,
+    url: string,
+    tag?: string
+
+}
 //Navigation
 //Navbar
 export interface navBarInterface {
     context: string,
     url: string,
-    submenu?: {
-        context: string,
-        url: string,
-        tag?: string
-    }[],
+    submenu?: submenuInterface[],
 
     gameCategory?: gameCategoryInterface[]
 }

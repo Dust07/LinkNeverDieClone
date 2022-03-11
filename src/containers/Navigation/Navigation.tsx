@@ -11,6 +11,7 @@ import Submenu from './Submenu/Submenu'
 
 function Navigation() {
     const [showNavBar, setShowNavBar] = useState(false);
+    // const [showSubBar, setShowSubBar] = useState(false);
 
     const handleClickCategory = () => {
 
@@ -36,10 +37,10 @@ function Navigation() {
                                     {item.submenu || item.gameCategory ?
                                         <FontAwesomeIcon icon={faChevronDown} />
                                         : ""}
-                                </div> 
-                                <div className="submenu-category">
-                                    <Submenu />
                                 </div>
+                                {/* {<div className={`submenu-category ${showSubBar && "show"}`}>
+                                    <Submenu submenu={item.submenu} gameCategory={item.gameCategory} />
+                                </div>} */}
 
                             </li>
                         )

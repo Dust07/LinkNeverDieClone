@@ -19,7 +19,7 @@ function Search() {
                 </select>
             </div>
             <div className="searchBtn-wrapper">
-                <Button name="Tìm kiếm" className="btn search-btn" />
+                <Button name="Tìm kiếm" className="search-btn" />
             </div>
 
 
