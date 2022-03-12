@@ -35,11 +35,14 @@
             }
         }
         &-category {
+            display: flex;
+            justify-content: center;
             background-color: var(--box-color-tag);
-            width: fit-content;
-            padding: 0.2rem 1rem;
             color: var(--main-blue-color);
-            margin: 1rem;
+            border-radius: $border-radius;
+            padding: 0.5rem;
+            width: fit-content;
+            margin: 1rem 0;
         }
 
         &-count {

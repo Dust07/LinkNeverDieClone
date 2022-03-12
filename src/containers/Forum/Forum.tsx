@@ -1,5 +1,6 @@
 import React from 'react'
 import "./style.scss";
+import "./responsive.scss"
 import { forumPosts } from "../../mockData/mockdata"
 
 function Forum() {

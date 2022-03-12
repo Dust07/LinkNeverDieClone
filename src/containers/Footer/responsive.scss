@@ -1,0 +1,13 @@
+@import "../../scss/variables";
+
+@media screen and (min-width: $laptop) {
+    .footer-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10rem;
+    }
+    h3 {
+        margin: 0 !important;
+        line-height: 3rem;
+    }
+}
