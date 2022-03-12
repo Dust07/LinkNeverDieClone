@@ -10,6 +10,8 @@ import {
 import { navBar } from "../../mockData/mockdata"
 import Category from './Category/Category'
 
+
+
 function Navigation() {
   const [showNavBar, setShowNavBar] = useState(false);
   return (

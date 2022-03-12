@@ -14,13 +14,13 @@ function Category({ item, index }: any) {
     }
     return (
         <li key={index} onClick={handleClickCategory}>
-            <div className="top-level-category">
+            <div className={`top-level-category ${showSubBar ? "highlighted" : ""}`}>
                 <h3>{item.context}</h3>
                 {item.category ?
                     <FontAwesomeIcon icon={faChevronDown} />
                     : ""}
             </div>
-            {showSubBar && <Submenu category={item.category} className="show-submenu" />}
+            <Submenu category={item.category} className={showSubBar ? "category-wrapper show-submenu" : "category-wrapper"} />
         </li>
     )
 }

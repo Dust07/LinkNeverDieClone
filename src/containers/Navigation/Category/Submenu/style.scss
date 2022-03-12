@@ -1,12 +1,17 @@
 @import "../../../../scss/variables";
 
 .category-wrapper {
+    max-height: 0;
     background-color: white;
     margin: 0 1rem;
     padding: 0 1rem;
+    transition: 1s;
+    overflow: hidden;
 }
 .category-list {
     list-style: none;
+    transition: 1s;
+
     > li {
         padding: 1rem 0;
     }
@@ -26,4 +31,9 @@
     li:hover {
         background-color: red;
     }
+}
+
+.show-submenu {
+    max-height: 2532px;
+    transition: 1s;
 }

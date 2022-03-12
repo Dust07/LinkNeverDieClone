@@ -1,9 +1,11 @@
+import { useEffect, useState } from "react";
 import { categoryInterface } from "../../../../interfaces/landingPageInterface"
 import "./style.scss"
 
-function Submenu({ category }: any) {
+function Submenu({ category, className }: any) {
+
   return (
-    <div className="category-wrapper">
+    <div className={className}>
       <ul className="category-list">
         {category &&
           category.map((item: categoryInterface, index: number) => {
