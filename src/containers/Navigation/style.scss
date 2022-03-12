@@ -39,33 +39,10 @@
     max-height: 0;
     top: 100%;
     overflow: auto;
-    visibility: hidden;
-    transition: 0.8s;
-    margin: 0 auto;
-}
-.show-nav-dropdown {
-    max-height: 60vh;
-    visibility: visible;
-    transition: 0.8s;
+    transition: max-height $transitionTimer;
 }
 
-.navBar-wide-layout {
-    width: 90%;
-    height: 100%;
-    ul {
-        height: 100%;
-        list-style: none;
-        display: flex;
-        justify-content: space-around;
-        li {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        li:hover {
-            background: red;
-        }
-    }
+.show-nav-dropdown {
+    max-height: 60vh;
+    transition: max-height $transitionTimer;
 }

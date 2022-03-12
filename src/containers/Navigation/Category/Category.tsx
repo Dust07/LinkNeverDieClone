@@ -5,6 +5,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import Submenu from './Submenu/Submenu'
 import "./style.scss"
+import "./responsive.scss"
+
 
 function Category({ item, index }: any) {
     const [showSubBar, setShowSubBar] = useState(false);
@@ -17,7 +19,7 @@ function Category({ item, index }: any) {
             <div className={`top-level-category ${showSubBar ? "highlighted" : ""}`}>
                 <h3>{item.context}</h3>
                 {item.category ?
-                    <FontAwesomeIcon icon={faChevronDown} />
+                    <FontAwesomeIcon icon={faChevronDown} className="category-arrow" />
                     : ""}
             </div>
             <Submenu category={item.category} className={showSubBar ? "category-wrapper show-submenu" : "category-wrapper"} />

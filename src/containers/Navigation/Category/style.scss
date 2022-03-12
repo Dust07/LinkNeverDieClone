@@ -5,10 +5,8 @@
     border-bottom: $border;
     display: flex;
     justify-content: space-between;
-    transition: 1s;
 }
 
 .highlighted {
     color: var(--main-blue-color);
-    transition: 1s;
 }

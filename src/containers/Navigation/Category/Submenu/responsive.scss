@@ -1,0 +1,6 @@
+@import "../../../../scss/variables";
+@media screen and (min-width: $laptop) {
+    .category-wrapper {
+        position: fixed;
+    }
+}
