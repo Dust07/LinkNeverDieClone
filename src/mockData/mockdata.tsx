@@ -19,55 +19,68 @@ export const navBar: Interface.navBarInterface[] = [
     {
         context: "Trang chủ",
         url: "/",
-        submenu: [
-            {
-                context: "Lịch sử phát triển",
-                url: ""
-            }
-        ]
+        category:
+            [
+                {
+                    context: "",
+                    url: "",
+                    submenu: [{
+                        context: "Lịch sử phát triển",
+                        url: ""
+                    }]
+                }
+
+            ]
+
     },
     {
         context: "Phần mềm",
         url: "/",
-        submenu: [
+        category: [
             {
-                context: "Hệ thống - bảo mật",
-                url: ""
-            },
-            {
-                context: "Văn phòng",
-                url: ""
-            },
-            {
-                context: "Đa phương tiện",
-                url: ""
-            },
-            {
-                context: "Anti-virus",
-                url: ""
-            },
-            {
-                context: "Lập trình - thiết kế",
-                url: ""
-            },
-            {
-                context: "Hệ điều hành",
-                url: ""
-            },
-            {
-                context: "Tiện ích, ứng dụng",
-                url: ""
-            },
+                context: "",
+                url: "",
+                submenu: [
+                    {
+                        context: "Hệ thống - bảo mật",
+                        url: ""
+                    },
+                    {
+                        context: "Văn phòng",
+                        url: ""
+                    },
+                    {
+                        context: "Đa phương tiện",
+                        url: ""
+                    },
+                    {
+                        context: "Anti-virus",
+                        url: ""
+                    },
+                    {
+                        context: "Lập trình - thiết kế",
+                        url: ""
+                    },
+                    {
+                        context: "Hệ điều hành",
+                        url: ""
+                    },
+                    {
+                        context: "Tiện ích, ứng dụng",
+                        url: ""
+                    },
+                ]
+            }
         ]
     },
     {
         context: "Games",
         url: "",
-        gameCategory: [
+        category: [
             {
                 context: "Hành động",
                 url: "",
-                category:
+                submenu:
                     [{
                         context: "Bắn súng góc nhìn thứ nhất",
                         url: "",
@@ -85,7 +98,7 @@ export const navBar: Interface.navBarInterface[] = [
             {
                 context: "Phiêu lưu",
                 url: "",
-                category:
+                submenu:
                     [{
                         context: "Nhập vai",
                         url: "",
@@ -112,7 +125,7 @@ export const navBar: Interface.navBarInterface[] = [
             {
                 context: "Chiến thuật",
                 url: "",
-                category:
+                submenu:
                     [{
                         context: "Turn-based",
                         url: "",
@@ -130,7 +143,7 @@ export const navBar: Interface.navBarInterface[] = [
             {
                 context: "Giả lập",
                 url: "",
-                category:
+                submenu:
                     [{
                         context: "Giả lập PS1",
                         url: "",
@@ -156,7 +169,7 @@ export const navBar: Interface.navBarInterface[] = [
             {
                 context: "Thể thao",
                 url: "",
-                category:
+                submenu:
                     [{
                         context: "Đua xe",
                         url: "",
@@ -198,7 +211,7 @@ export const navBar: Interface.navBarInterface[] = [
             {
                 context: "Khác",
                 url: "",
-                category:
+                submenu:
                     [{
                         context: "Indie",
                         url: "",
@@ -247,7 +260,7 @@ export const navBar: Interface.navBarInterface[] = [
             {
                 context: "Sắp xếp",
                 url: "",
-                category:
+                submenu:
                     [{
                         context: "Mới phát hành",
                         url: "",
@@ -272,155 +285,163 @@ export const navBar: Interface.navBarInterface[] = [
     {
         context: "Phim HD - Bluray",
         url: "/",
-        submenu: [
+        category: [
             {
-                context: "Hành động",
-                url: ""
-            },
-            {
-                context: "Tâm lý",
-                url: ""
-            },
-            {
-                context: "Chiến tranh",
-                url: ""
-            },
-            {
-                context: "Võ thuật - kiếm hiệp",
-                url: ""
-            },
-            {
-                context: "Nhạc kịch",
-                url: ""
-            },
-            {
-                context: "Kinh dị",
-                url: ""
-            },
-            {
-                context: "Tội phạm - hình sự",
-                url: ""
-            },
-            {
-                context: "Phiêu lưu",
-                url: ""
-            },
-            {
-                context: "Hài hước",
-                url: ""
-            },
-            {
-                context: "Viễn tưởng",
-                url: ""
-            },
-            {
-                context: "Khoa học - tài liệu",
-                url: ""
-            },
-            {
-                context: "Hoạt hình",
-                url: ""
-            },
-            {
-                context: "Thể thao",
-                url: ""
-            },
-            {
-                context: "Tình cảm",
-                url: ""
-            },
-            {
-                context: "Kỳ ảo",
-                url: ""
-            },
-            {
-                context: "Giật gân",
-                url: ""
-            },
-            {
-                context: "Gia đình",
-                url: ""
-            },
-            {
-                context: "Bí ẩn",
-                url: ""
-            },
-            {
-                context: "Lịch sử",
-                url: ""
-            },
-            {
-                context: "Viễn Tây",
-                url: ""
-            },
-            {
-                context: "Tiểu sử",
-                url: ""
-            },
-            {
-                context: "Âu - Mỹ",
-                url: ""
-            },
-            {
-                context: "Trung Quốc",
-                url: ""
-            },
-            {
-                context: "Hàn Quốc",
-                url: ""
-            },
-            {
-                context: "Nhật Bản",
-                url: ""
-            },
-            {
-                context: "Ấn Độ",
-                url: ""
-            },
-            {
-                context: "Việt Nam",
-                url: ""
-            },
-            {
-                context: "Tổng hợp",
+                context: "",
                 url: "",
-                tag: "Hot"
-            },
-            {
-                context: "Mới Upload",
-                url: ""
-            },
-            {
-                context: "Xem nhiều nhất",
-                url: "",
-                tag: "Hot"
-            },
-            {
-                context: "Sắp phát hành",
-                url: ""
-            },
-            {
-                context: "Bộ sưu tập",
-                url: "",
-                tag: "Hot"
-            },
-            {
-                context: "Diễn viên",
-                url: ""
-            },
-            {
-                context: "Đạo diễn",
-                url: ""
-            },
+                submenu: [
+                    {
+                        context: "Hành động",
+                        url: ""
+                    },
+                    {
+                        context: "Tâm lý",
+                        url: ""
+                    },
+                    {
+                        context: "Chiến tranh",
+                        url: ""
+                    },
+                    {
+                        context: "Võ thuật - kiếm hiệp",
+                        url: ""
+                    },
+                    {
+                        context: "Nhạc kịch",
+                        url: ""
+                    },
+                    {
+                        context: "Kinh dị",
+                        url: ""
+                    },
+                    {
+                        context: "Tội phạm - hình sự",
+                        url: ""
+                    },
+                    {
+                        context: "Phiêu lưu",
+                        url: ""
+                    },
+                    {
+                        context: "Hài hước",
+                        url: ""
+                    },
+                    {
+                        context: "Viễn tưởng",
+                        url: ""
+                    },
+                    {
+                        context: "Khoa học - tài liệu",
+                        url: ""
+                    },
+                    {
+                        context: "Hoạt hình",
+                        url: ""
+                    },
+                    {
+                        context: "Thể thao",
+                        url: ""
+                    },
+                    {
+                        context: "Tình cảm",
+                        url: ""
+                    },
+                    {
+                        context: "Kỳ ảo",
+                        url: ""
+                    },
+                    {
+                        context: "Giật gân",
+                        url: ""
+                    },
+                    {
+                        context: "Gia đình",
+                        url: ""
+                    },
+                    {
+                        context: "Bí ẩn",
+                        url: ""
+                    },
+                    {
+                        context: "Lịch sử",
+                        url: ""
+                    },
+                    {
+                        context: "Viễn Tây",
+                        url: ""
+                    },
+                    {
+                        context: "Tiểu sử",
+                        url: ""
+                    },
+                    {
+                        context: "Âu - Mỹ",
+                        url: ""
+                    },
+                    {
+                        context: "Trung Quốc",
+                        url: ""
+                    },
+                    {
+                        context: "Hàn Quốc",
+                        url: ""
+                    },
+                    {
+                        context: "Nhật Bản",
+                        url: ""
+                    },
+                    {
+                        context: "Ấn Độ",
+                        url: ""
+                    },
+                    {
+                        context: "Việt Nam",
+                        url: ""
+                    },
+                    {
+                        context: "Tổng hợp",
+                        url: "",
+                        tag: "Hot"
+                    },
+                    {
+                        context: "Mới Upload",
+                        url: ""
+                    },
+                    {
+                        context: "Xem nhiều nhất",
+                        url: "",
+                        tag: "Hot"
+                    },
+                    {
+                        context: "Sắp phát hành",
+                        url: ""
+                    },
+                    {
+                        context: "Bộ sưu tập",
+                        url: "",
+                        tag: "Hot"
+                    },
+                    {
+                        context: "Diễn viên",
+                        url: ""
+                    },
+                    {
+                        context: "Đạo diễn",
+                        url: ""
+                    },
+                ]
+            }
         ]
     },
     {
         context: "Diễn đàn",
-        url: "/forums"
+        url: "/forums",
+        category: null
     },
     {
         context: "FAQs",
-        url: "/faqs"
+        url: "/faqs",
+        category: null
     }
 ]
 //Features Component

@@ -1,0 +1,8 @@
+@import "../../../scss/variables";
+
+.top-level-category {
+    padding: 1rem;
+    border-bottom: $border;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,29 @@
+@import "../../../../scss/variables";
+
+.category-wrapper {
+    background-color: white;
+    margin: 0 1rem;
+    padding: 0 1rem;
+}
+.category-list {
+    list-style: none;
+    > li {
+        padding: 1rem 0;
+    }
+}
+
+.category-context {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.submenu-wrapper {
+    list-style: none;
+    > li {
+        padding: 1rem 0;
+        height: auto;
+    }
+    li:hover {
+        background-color: red;
+    }
+}

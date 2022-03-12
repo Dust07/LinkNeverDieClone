@@ -1,31 +1,25 @@
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 //Game Category
-export interface gameCategoryInterface {
-    context: string,
-    url: string,
-    category: {
-        context: string,
-        url: string,
-        tag?: string
-    }[]
-}
 
 export interface submenuInterface {
-
     context: string,
     url: string,
     tag?: string
-
 }
+
+export interface categoryInterface {
+    context: string,
+    url: string,
+    submenu: submenuInterface[]
+}
+
 //Navigation
 //Navbar
 export interface navBarInterface {
     context: string,
     url: string,
-    submenu?: submenuInterface[],
-
-    gameCategory?: gameCategoryInterface[]
+    category: categoryInterface[] | null
 }
 //Features
 export interface featuresOptionInterface {
