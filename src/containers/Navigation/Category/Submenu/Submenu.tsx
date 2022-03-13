@@ -27,7 +27,6 @@ function Submenu({ category, className }: any) {
           )}
       </ul>
     </div>
-
   )
 }
 

@@ -1,12 +1,17 @@
 @import "../../../scss/variables";
 
 .top-level-category {
-    padding: 1rem;
-    border-bottom: $border;
-    display: flex;
-    justify-content: space-between;
+  padding: 1rem;
+  border-bottom: $border;
+  display: flex;
+  justify-content: space-between;
 }
 
 .highlighted {
-    color: var(--main-blue-color);
+  color: var(--main-blue-color);
+  cursor: pointer;
 }
+
+// .position-relative {
+//   position: relative;
+// }
