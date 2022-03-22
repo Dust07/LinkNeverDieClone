@@ -1,15 +1,6 @@
 @import "../../scss/variables";
 
 @media screen and (min-width: $laptop) {
-  .features-wrapper {
-    > ul {
-      display: flex;
-      > li {
-        justify-content: center;
-      }
-    }
-  }
-
   .feature-item-list-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

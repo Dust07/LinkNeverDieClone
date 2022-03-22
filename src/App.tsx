@@ -2,7 +2,8 @@ import React from 'react';
 import './main.scss';
 import Header from './containers/Header/Header';
 import Hero from './containers/Hero/Hero';
-import Features from './containers/Features/Features';
+import FeaturesGames from './containers/FeaturesGames/FeaturesGames';
+import FeaturesFilms from './containers/FeaturesFilms/FeaturesFilms';
 import Forum from './containers/Forum/Forum';
 import Footer from './containers/Footer/Footer';
 import Navigation from './containers/Navigation/Navigation';
@@ -15,8 +16,8 @@ function App() {
       <Navigation />
       <Hero />
       <Search />
-      <Features />
-      <Features />
+      <FeaturesGames />
+      <FeaturesFilms />
       <Forum />
       <Footer />
     </div>

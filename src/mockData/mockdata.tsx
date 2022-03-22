@@ -19,19 +19,7 @@ export const navBar: Interface.navBarInterface[] = [
     {
         context: "Trang chủ",
         url: "/",
-        category:
-            [
-                {
-                    context: "",
-                    url: "",
-                    submenu: [{
-                        context: "Lịch sử phát triển",
-                        url: ""
-                    }]
-                }
-
-            ]
-
+        category: null
     },
     {
         context: "Phần mềm",
@@ -478,7 +466,7 @@ export const featuredGames: Interface.featuredGameInterface[] = [
     }
 ]
 
-export const featuresOption: Interface.featuresOptionInterface[] = [
+export const featuresOptions: Interface.featuresOptionInterface[] = [
     {
         name: "Game mới",
         iconURL: faGamepad
