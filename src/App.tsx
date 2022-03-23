@@ -1,25 +1,17 @@
-import React from 'react';
 import './main.scss';
-import Header from './containers/landing-page/Header/Header';
-import Hero from './containers/landing-page/Hero/Hero';
-import FeaturesGames from './containers/landing-page/FeaturesGames/FeaturesGames';
-import FeaturesFilms from './containers/landing-page/FeaturesFilms/FeaturesFilms';
-import Forum from './containers/landing-page/Forum/Forum';
-import Footer from './containers/landing-page/Footer/Footer';
-import Navigation from './containers/landing-page/Navigation/Navigation';
-import Search from './containers/landing-page/Search/Search';
+import LandingPage from './containers/landing-page/LandingPage';
+import Layout from './containers/Layout/Layout';
+import LoginPage from './containers/login-register-page/login-page/LoginPage';
+import RegisterPage from './containers/login-register-page/register-page/RegisterPage';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Navigation />
-      <Hero />
-      <Search />
-      <FeaturesGames />
-      <FeaturesFilms />
-      <Forum />
-      <Footer />
+      <Layout>
+        <LandingPage />
+        {/* <LoginPage />
+        <RegisterPage /> */}
+      </Layout>
     </div>
   );
 }
