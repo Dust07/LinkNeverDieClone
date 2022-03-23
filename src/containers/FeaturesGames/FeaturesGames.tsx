@@ -2,6 +2,7 @@ import "./style.scss"
 import "./responsive.scss"
 import { featuredGames } from "../../mockData/mockdata"
 import FeaturesOptions from "../../components/FeaturesOptions/FeaturesOptions";
+import { gamesInterface } from "../../interfaces/landingPageInterface";
 
 function FeaturesGames() {
   return (
@@ -9,7 +10,7 @@ function FeaturesGames() {
       <FeaturesOptions />
 
       <div className="feature-item-list-wrapper">
-        {featuredGames.map((game, index) => {
+        {featuredGames.map((game: gamesInterface, index: number) => {
           const { name, category, image, description } = game;
           return (
             <div key={index} className="featured-item">

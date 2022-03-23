@@ -23,7 +23,7 @@ function Navigation() {
           <ul className="navbar">
             {navBar.map((item, index) => {
               return (
-                <Category item={item} index={index} />
+                <Category key={index} item={item} index={index} />
               )
             })}
           </ul>

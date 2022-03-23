@@ -3,6 +3,7 @@ import "./style.scss";
 import "./responsive.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { contactOption, socialLinks } from '../../mockData/mockdata';
+import { contactOptionInterface, socialLinksInterface } from '../../interfaces/landingPageInterface';
 
 
 const totalView = 777777777;
@@ -18,7 +19,7 @@ function Footer() {
           <p>Cộng đồng chia sẻ nội dung, kiến thức hữu ích về công nghệ và giải trí.</p>
           <h3>Liên hệ</h3>
           <ul>
-            {contactOption.map((contact, index) => {
+            {contactOption.map((contact: contactOptionInterface, index: number) => {
               return (
                 <li key={index}>
                   <FontAwesomeIcon icon={contact.icon} />
@@ -52,7 +53,7 @@ function Footer() {
           <h3>Mạng xã hội</h3>
           <p>Theo dõi các mạng xã hội để có được những thông tin mới nhất</p>
           <ul className="social-list">
-            {socialLinks.map((social, index) => {
+            {socialLinks.map((social: socialLinksInterface, index: number) => {
               return (
                 <li key={index}>
                   <FontAwesomeIcon icon={social.icon} />

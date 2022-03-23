@@ -2,12 +2,13 @@ import "./style.scss"
 import "./responsive.scss"
 import { featuresOptions } from "../../mockData/mockdata"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { featuresOptionInterface } from "../../interfaces/landingPageInterface"
 
 function FeaturesOptions() {
   return (
     <div className="features-options-wrapper">
       <ul>
-        {featuresOptions.map((option, index) => {
+        {featuresOptions.map((option: featuresOptionInterface, index: number) => {
           return (
             <li key={index}>
               <div className="feature-icon-wrapper">

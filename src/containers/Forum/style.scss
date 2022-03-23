@@ -2,13 +2,13 @@
 
 .forum-wrapper {
     width: 90%;
-    margin-bottom: 2rem;
+    margin-bottom: $component-margin-bottom;
     .forum-title {
         background-color: white;
         border-radius: $border-radius;
         padding: 2rem 1rem;
         font-size: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: $component-margin-bottom;
     }
     .forum-posts-wrapper {
         background-color: white;

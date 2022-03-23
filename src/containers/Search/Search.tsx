@@ -1,4 +1,3 @@
-import React from 'react'
 import "./style.scss";
 import "./responsive.scss";
 import Button from '../../components/Button/Button';

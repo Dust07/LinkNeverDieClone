@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { categoryInterface } from "../../../../interfaces/landingPageInterface"
 import "./style.scss"
 import "./responsive.scss"

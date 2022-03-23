@@ -11,6 +11,8 @@ import {
 
 //Game Category
 
+//Film Category
+
 //Search Component
 export const searchCategory: string[] = ["Tất cả", "Game", "Phần mềm", "Phim"];
 
@@ -433,7 +435,7 @@ export const navBar: Interface.navBarInterface[] = [
     }
 ]
 //Features Component
-export const featuredGames: Interface.featuredGameInterface[] = [
+export const featuredGames: Interface.gamesInterface[] = [
     {
         name: "Spark in the Dark",
         category: ["Hành động", "Phiêu lưu", "Nhập vai", "Souls-like", "Indie"],
@@ -466,6 +468,47 @@ export const featuredGames: Interface.featuredGameInterface[] = [
     }
 ]
 
+export const featuredFilms: Interface.filmsInterface[] = [
+    {
+        name: "Bad Boys for Life",
+        vietSubName: "Dân chơi từ nhỏ",
+        category: ["Hành động", "Tội phạm - Hình sự", "Hài Hước"],
+        image: "BadBoysforLife.jpg",
+        description: "Bad Boys for Life (Những Gã Trai Hư Trọn Đời) - Sau khi dừng lại ở phần 2 cách đây 16 năm, loạt phim hài hành động nổi đính đám Bad Boys đã chính thức trở lại với khán giả trên toàn thế giới. Vẫn giữ nguyên “cặp đôi huyền thoại” Will Smith và Martin Lawrence, tuy nhiên, Bad Boys For Life sẽ đưa khán giả vào một hành trình mới toanh mà chính chúng ta cũng không ngờ tới.",
+        country: "Âu - Mỹ",
+        imdb: 6.8,
+        rating: 5
+    },
+    {
+        name: "One Piece: Stampede",
+        vietSubName: "One Piece: Lễ hội hải tặc",
+        category: ["Hoạt hình"],
+        image: "OnePieceStampede.jpg",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, suscipit. Odit nam tenetur similique cumque ipsum, consequuntur magni ratione. Minima aspernatur quod consequatur ipsam porro officia nobis sint nesciunt qui Itaque commodi voluptatum tempore dignissimos molestiae ullam ex, sint nisi at, minima voluptatibus praesentium maiores.Voluptates dolorem ex nam, laboriosam accusamus odit quia nihil obcaecati eveniet autem incidunt, impedit nemo!",
+        country: "Nhật Bản",
+        imdb: 7.9,
+        rating: 4
+    },
+    {
+        name: "Star Wars: Episode IX - The Rise of Skywalker",
+        vietSubName: "Chiến Tranh Giữa Các Vì Sao 9: Skywalker Trỗi Dậy",
+        category: ["Hành động", "Phiêu lưu", "Viễn Tưởng"],
+        image: "StarWarsIX.jpg",
+        description: "Star Wars: Episode IX - The Rise of Skywalker (Chiến Tranh Giữa Các Vì Sao 9: Skywalker Trỗi Dậy) - Vũ trụ Star Wars sẽ tiếp tục quay trở lại với phần phim thứ 9, hứa hẹn đánh dấu đoạn kết trong hành trình trở thành một Jedi đánh dấu kết thúc sau 9 năm của phim star wars mở ra kỉ nguyên star wars mới trong 10 năm tới",
+        country: "Âu - Mỹ",
+        imdb: 6.8,
+        rating: 5
+    },
+    {
+        name: "IP Man 4: The Finale",
+        vietSubName: "Diệp Vấn 4: Hồi cuối",
+        category: ["Võ thuật", "Kiếm hiệp"],
+        image: "IPMan4.jpg",
+        description: `Ip Man 4: The Finale (Diệp Vấn 4: Hồi Cuối) - Kết thúc phần 3, Diệp Vấn trở thành "gà trống nuôi con" khi vợ mất vì bệnh ung thư. Phần 4 tiếp tục mạch truyện trước nhưng mốc thời gian là vào năm 1964, lúc này Diệp Vấn đã hơn 70 tuổi. Phát hiện mình bị ung thư thanh quản do nhiều năm hút thuốc, chưởng môn họ Diệp sau đó đã quyết định sang San Francisco (Mỹ) để kiếm trường cho con và dạy võ. Thế nhưng người Mỹ lại không hiểu được võ thuật Trung Hoa. Đồng thời chính Diệp Vấn lại bị thử thách nhiều lần ngay trên đất Mỹ, nơi cộng đồng Hoa kiều bị dân Mỹ nhìn với ánh mắt phân biệt.`,
+        imdb: 7.2,
+        rating: 5
+    }
+]
 export const featuresOptions: Interface.featuresOptionInterface[] = [
     {
         name: "Game mới",

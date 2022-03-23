@@ -27,7 +27,7 @@ export interface featuresOptionInterface {
     iconURL: IconDefinition
 }
 
-export interface featuredGameInterface {
+export interface gamesInterface {
     name: string,
     category: string[],
     image: string,
@@ -35,6 +35,19 @@ export interface featuredGameInterface {
     tag?: string
 }
 
+export interface filmsInterface {
+    name: string,
+    vietSubName: string,
+    category: string[],
+    image: string,
+    description: string,
+    trailer?: string,
+    country?: string,
+    imdb?: number,
+    rating?: number,
+    uploadDate?: Date,
+
+}
 //Footer
 export interface contactOptionInterface {
     icon: IconDefinition,

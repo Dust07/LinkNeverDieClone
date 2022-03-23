@@ -7,7 +7,6 @@ import Submenu from './Submenu/Submenu'
 import "./style.scss"
 import "./responsive.scss"
 
-
 function Category({ item, index }: any) {
     const [showSubBar, setShowSubBar] = useState(false);
 
