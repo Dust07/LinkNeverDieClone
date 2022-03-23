@@ -1,0 +1,49 @@
+@import "../../../scss/variables";
+
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    z-index: 999;
+}
+
+.nav-wrapper {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dropDownBtn {
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: $border;
+    border-radius: $border-radius;
+}
+
+.searchBtn {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    color: white;
+    border-radius: 100%;
+    background-color: var(--main-blue-color);
+    cursor: pointer;
+}
+
+.navbar-wrapper {
+    position: absolute;
+    background-color: var(--main-bg-color);
+    width: 100%;
+    max-height: 0;
+    top: 100%;
+    overflow: auto;
+    transition: max-height $transitionTimer;
+}
+
+.show-nav-dropdown {
+    max-height: 60vh;
+    transition: max-height $transitionTimer;
+}

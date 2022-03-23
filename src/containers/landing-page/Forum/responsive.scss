@@ -1,0 +1,27 @@
+@import "../../../scss/variables";
+@media screen and (min-width: $laptop) {
+    .forum-post {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        > h3 {
+            grid-column: span 8;
+        }
+
+        &-user {
+            grid-column: span 2;
+        }
+        &-count {
+            grid-column-start: 9;
+            grid-column-start: 10;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            align-items: center;
+            &-item {
+                border-radius: $border-radius;
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+}

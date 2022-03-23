@@ -1,0 +1,42 @@
+@import "../../../../../scss/variables";
+
+.category-wrapper {
+    max-height: 0;
+    background-color: white;
+    margin: 0 1rem;
+    padding: 0 1rem;
+    overflow: hidden;
+    transition: max-height $transitionTimer;
+}
+.category-list {
+    list-style: none;
+    > li {
+        padding: 1rem 0;
+    }
+}
+
+.category-context {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.category-context:hover {
+    color: var(--main-blue-color);
+    cursor: pointer;
+}
+.submenu-wrapper {
+    list-style: none;
+    > li {
+        padding: 0.5rem 0;
+        height: auto;
+    }
+    li:hover {
+        color: var(--main-blue-color);
+        cursor: pointer;
+    }
+}
+
+.show-submenu {
+    max-height: 2532px;
+    transition: max-height $transitionTimer;
+}

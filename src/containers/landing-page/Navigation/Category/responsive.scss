@@ -1,0 +1,11 @@
+@import "../../../../scss/variables";
+@media screen and (min-width: $laptop) {
+    .category-arrow {
+        display: none;
+    }
+    .top-level-category {
+        border-bottom: 0;
+        display: flex;
+        justify-content: center;
+    }
+}

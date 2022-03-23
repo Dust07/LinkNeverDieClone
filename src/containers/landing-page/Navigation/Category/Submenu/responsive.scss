@@ -1,0 +1,47 @@
+@import "../../../../../scss/variables";
+@media screen and (min-width: $laptop) {
+    .category-wrapper {
+        position: absolute;
+        max-width: 1000px;
+        z-index: 999;
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        .category-list {
+            display: grid;
+            grid-template-rows: fit-content, fit-content;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 4rem;
+            width: 100%;
+            align-items: baseline;
+            grid-auto-flow: column;
+            > li:nth-child(5),
+            > li:nth-child(6),
+            > li:nth-child(7) {
+                grid-row: span 2;
+            }
+
+            > li:only-child {
+                grid-column: span 5;
+                > ul {
+                    display: grid;
+                    width: 100%;
+                    grid-template-rows: repeat(7, 1fr);
+                    grid-auto-columns: minmax(0, 1fr);
+                    grid-auto-flow: column;
+                    gap: 1rem;
+                    > li {
+                        border-right: $border;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .show-submenu {
+        max-height: 600px;
+        transition: max-height $transitionTimer;
+    }
+}

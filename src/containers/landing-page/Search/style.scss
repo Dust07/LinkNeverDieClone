@@ -1,0 +1,64 @@
+@import "../../../scss/variables";
+
+.search-wrapper {
+    position: relative;
+    border-radius: $border-radius;
+    background: white;
+    transform: translateY(-4rem);
+    transform-style: preserve-3d;
+
+    .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+        // Adjust the selection arrow
+        // > select {
+        //     appearance: none;
+        // }
+        .search-field {
+            font-size: 1rem;
+            padding: 1rem;
+            margin: 0.5rem;
+            width: 100%;
+            border: $border;
+            border-radius: $border-radius;
+        }
+    }
+    .searchBtn-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .search-wrapper-shadow-effect {
+        position: absolute;
+        width: 100%;
+        transform-style: preserve-3d;
+        display: flex;
+        justify-content: center;
+    }
+    .search-wrapper-shadow-effect::before {
+        content: "";
+        position: absolute;
+        background: var(--main-white-transparent-color);
+        width: 90%;
+        height: 200px;
+        top: -15px;
+        border-radius: $border-radius;
+        transform: translateZ(-1px);
+    }
+
+    .search-wrapper-shadow-effect::after {
+        content: "";
+        position: absolute;
+        background: var(--main-white-transparent-color);
+        width: 80%;
+        height: 200px;
+        top: -30px;
+        transform: translateZ(-1px);
+        border-radius: $border-radius;
+    }
+}
