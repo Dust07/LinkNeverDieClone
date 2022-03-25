@@ -22,9 +22,14 @@ export interface navBarInterface {
     category: categoryInterface[] | null
 }
 //Features
-export interface featuresOptionInterface {
+export interface OptionsInterface {
     name: string,
     iconURL: IconDefinition
+}
+
+export interface featuresOptionInterface {
+    category: string,
+    options: OptionsInterface[]
 }
 
 export interface gamesInterface {

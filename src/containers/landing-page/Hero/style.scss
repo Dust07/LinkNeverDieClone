@@ -1,5 +1,8 @@
+@import "../../../scss/variables";
 .hero-background {
-    background-image: linear-gradient(to left, var(--main-pink-color), var(--main-blue-color));
+    background-image: linear-gradient(to left, rgba($main-pink-color, 1), rgba($main-blue-color, 1));
+    // background-image: url("../../../assets/hero-cover.jpg");
+
     width: 100%;
     height: 80vh;
     display: flex;

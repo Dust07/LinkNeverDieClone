@@ -21,7 +21,7 @@
     font-weight: bold;
 }
 .category-context:hover {
-    color: var(--main-blue-color);
+    color: $main-blue-color;
     cursor: pointer;
 }
 .submenu-wrapper {
@@ -31,7 +31,7 @@
         height: auto;
     }
     li:hover {
-        color: var(--main-blue-color);
+        color: $main-blue-color;
         cursor: pointer;
     }
 }

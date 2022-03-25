@@ -7,7 +7,7 @@ import { gamesInterface } from "../../../interfaces/landingPageInterface";
 function FeaturesGames() {
   return (
     <div className="container features-games-wrapper">
-      <FeaturesOptions />
+      <FeaturesOptions category="Games" />
 
       <div className="feature-item-list-wrapper">
         {featuredGames.map((game: gamesInterface, index: number) => {

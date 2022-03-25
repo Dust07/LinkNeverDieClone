@@ -20,6 +20,11 @@
 }
 
 @media screen and (min-width: $laptop) {
+    .hero-background {
+        background: linear-gradient(to left, rgba($main-pink-color, 0.8), rgba($main-blue-color, 0.8)),
+            url("../../../assets/hero-cover.jpg") repeat;
+        background-size: cover, contain;
+    }
     .hero-wrapper {
         width: 80%;
         > h1 {

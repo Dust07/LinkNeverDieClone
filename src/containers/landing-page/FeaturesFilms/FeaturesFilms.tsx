@@ -7,7 +7,8 @@ import { filmsInterface } from "../../../interfaces/landingPageInterface"
 function FeaturesFilms() {
   return (
     <div className="container featured-films-wrapper">
-      <FeaturesOptions />
+      <FeaturesOptions category="Films" />
+
       <div className="featured-films-list-wrapper">
         {featuredFilms.map((film: filmsInterface, index: number) => {
           const { image, name, vietSubName } = film;

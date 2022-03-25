@@ -1,6 +1,7 @@
 import * as Interface from '../interfaces/landingPageInterface';
 import {
     faGamepad,
+    faFilm,
     faFireFlameCurved,
     faCircleUp,
     faPhone,
@@ -511,17 +512,35 @@ export const featuredFilms: Interface.filmsInterface[] = [
 ]
 export const featuresOptions: Interface.featuresOptionInterface[] = [
     {
-        name: "Game mới",
-        iconURL: faGamepad
+        category: "Games",
+        options: [{
+            name: "Game mới",
+            iconURL: faGamepad
+        },
+        {
+            name: "TOP game hay",
+            iconURL: faFireFlameCurved
+        },
+        {
+            name: "Update",
+            iconURL: faCircleUp
+        }],
     },
     {
-        name: "TOP game hay",
-        iconURL: faFireFlameCurved
-    },
-    {
-        name: "Update",
-        iconURL: faCircleUp
-    },
+        category: "Films",
+        options: [{
+            name: "Phim mới",
+            iconURL: faFilm,
+        },
+        {
+            name: "TOP phim hay",
+            iconURL: faFireFlameCurved
+        },
+        {
+            name: "Update",
+            iconURL: faCircleUp
+        }],
+    }
 ]
 
 //Forum Component

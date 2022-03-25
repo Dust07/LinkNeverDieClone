@@ -4,4 +4,12 @@
     .header-wrapper {
         width: 90%;
     }
+    .header-logo-wrapper {
+        > a {
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .header-logo {
+        }
+    }
 }

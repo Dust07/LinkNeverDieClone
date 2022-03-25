@@ -4,9 +4,7 @@ import Layout from '../../Layout/Layout'
 function RegisterPage() {
   return (
     <>
-      <Layout>
-        <div>Register Page</div>
-      </Layout>
+      <div>Register Page</div>
     </>
   )
 }

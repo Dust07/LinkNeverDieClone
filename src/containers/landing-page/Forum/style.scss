@@ -37,8 +37,8 @@
         &-category {
             display: flex;
             justify-content: center;
-            background-color: var(--box-color-tag);
-            color: var(--main-blue-color);
+            background-color: $box-color-tag;
+            color: $main-blue-color;
             border-radius: $border-radius;
             padding: 0.5rem;
             width: fit-content;
@@ -57,7 +57,7 @@
                 text-align: center;
                 padding: 0 1rem;
                 margin-right: 1rem;
-                background-color: var(--box-color);
+                background-color: $box-color;
                 > p {
                     padding-bottom: 0.5rem;
                 }

@@ -1,7 +1,7 @@
 @import "../../../scss/variables";
 .footer-wrapper-container {
     width: 100%;
-    background: var(--footer-first-color);
+    background: $footer-first-color;
     display: flex;
     justify-content: center;
 }

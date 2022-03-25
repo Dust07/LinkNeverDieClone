@@ -2,23 +2,32 @@ import "./style.scss"
 import "./responsive.scss"
 import { featuresOptions } from "../../mockData/mockdata"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { featuresOptionInterface } from "../../interfaces/landingPageInterface"
+import { featuresOptionInterface, OptionsInterface } from "../../interfaces/landingPageInterface"
 
-function FeaturesOptions() {
+interface Props {
+  category: string
+}
+
+function FeaturesOptions({ category }: Props) {
   return (
     <div className="features-options-wrapper">
       <ul>
-        {featuresOptions.map((option: featuresOptionInterface, index: number) => {
-          return (
-            <li key={index}>
-              <div className="feature-icon-wrapper">
-                <FontAwesomeIcon icon={option.iconURL} />
-              </div>
-              <div className="feature-text-wrapper">
-                <p>{option.name}</p>
-              </div>
-            </li>
-          )
+        {featuresOptions.map((currentCategory: featuresOptionInterface) => {
+          if (currentCategory.category === category) {
+            return currentCategory.options.map((option: OptionsInterface, index: number) => {
+              return (
+                <li key={index}>
+                  <div className="feature-icon-wrapper">
+                    <FontAwesomeIcon icon={option.iconURL} />
+                  </div>
+                  <div className="feature-text-wrapper">
+                    <p>{option.name}</p>
+                  </div>
+                </li>
+              )
+            })
+          }
+          else return;
         })}
       </ul>
     </div>

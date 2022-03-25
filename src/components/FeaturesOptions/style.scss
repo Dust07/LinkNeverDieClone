@@ -13,7 +13,7 @@
             border-bottom: 3px solid white;
         }
         > li:hover {
-            border-bottom: 3px solid var(--main-blue-color);
+            border-bottom: 3px solid $main-blue-color;
             cursor: pointer;
         }
     }

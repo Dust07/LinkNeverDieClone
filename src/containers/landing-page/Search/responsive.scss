@@ -30,7 +30,7 @@
         .search-wrapper-shadow-effect::before {
             content: "";
             position: absolute;
-            background: var(--main-white-transparent-color);
+            background: $main-white-transparent-color;
             width: 90%;
             height: 80px;
             top: -80px;
@@ -41,7 +41,7 @@
         .search-wrapper-shadow-effect::after {
             content: "";
             position: absolute;
-            background: var(--main-white-transparent-color);
+            background: $main-white-transparent-color;
             width: 80%;
             height: 100px;
             top: -100px;
