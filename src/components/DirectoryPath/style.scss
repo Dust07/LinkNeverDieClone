@@ -1,0 +1,30 @@
+@import "../../scss/variables";
+
+.directory-wrapper {
+    background-image: linear-gradient(to left, rgba($main-pink-color, 1), rgba($main-blue-color, 1));
+    color: white;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.current-directory {
+    width: 90%;
+    line-height: 2.5rem;
+    .directory-path-list {
+        list-style: none;
+        display: flex;
+        li {
+            color: white;
+        }
+        li:first-child::after {
+            content: " /\00a0";
+        }
+    }
+    > p {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}

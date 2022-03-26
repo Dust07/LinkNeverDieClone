@@ -1,9 +1,11 @@
 import React from 'react'
-import Layout from '../../Layout/Layout'
+import DirectoryPath from '../../../components/DirectoryPath/DirectoryPath'
 
 function RegisterPage() {
   return (
     <>
+      <DirectoryPath currentDirectory="register" />
+
       <div>Register Page</div>
     </>
   )
