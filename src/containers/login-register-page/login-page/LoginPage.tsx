@@ -1,10 +1,16 @@
-import "./style.scss"
-import "./responsive.scss"
+import "../style.scss"
+import "../responsive.scss"
+import { useEffect } from "react"
 import DirectoryPath from '../../../components/DirectoryPath/DirectoryPath'
 import Input from "../../../components/Input/Input"
 import Button from "../../../components/Button/Button"
 import { Link } from "react-router-dom"
+
 function LoginPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <>
       <DirectoryPath currentDirectory="login" />
@@ -24,6 +30,7 @@ function LoginPage() {
 
               <Input
                 label="Mật khẩu:"
+                type="password"
                 name="password"
                 classNameForLabel="login-register-form-label" className="login-register-form-input-field"
                 placeholder="Mật khẩu"
@@ -38,7 +45,7 @@ function LoginPage() {
           </div>
 
           <div className="login-form-options">
-            <p>Bạn quên mật khẩu?</p>
+            <Link to="/login">Bạn quên mật khẩu?</Link>
             <Link to="/register"><p>Tạo tài khoản mới</p></Link>
           </div>
         </div>

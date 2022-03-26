@@ -1,4 +1,4 @@
-@import "../../../scss/variables";
+@import "../../scss/variables";
 
 .login-form-wrapper {
     display: flex;
@@ -15,12 +15,9 @@
     background-color: white;
 }
 .login-form-title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     line-height: 3rem;
-    padding: 1rem 0;
+    padding: 1rem;
     border-bottom: $border;
 }
 
@@ -51,7 +48,7 @@
     height: 20px;
     border: $border;
 }
-.login-page-btn {
+.login-register-page-btn {
     width: fit-content;
     margin: 1rem 0;
 }
@@ -61,7 +58,7 @@
     padding: 0 2rem;
     padding-bottom: 2rem;
     line-height: 2rem;
-    p:hover {
+    a:hover {
         width: fit-content;
         cursor: pointer;
         color: $main-blue-color;
