@@ -11,7 +11,6 @@ function App() {
     <div className="App">
       <Router>
         <Layout>
-
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />
@@ -19,7 +18,6 @@ function App() {
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Layout>
-
       </Router>
     </div>
   );
