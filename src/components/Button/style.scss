@@ -15,8 +15,7 @@
 .login-btn {
     background: $main-blue-color;
     color: white;
-    margin-right: 1rem;
-    border-radius: 20px;
+    border-radius: $btn-border;
 }
 
 .signup-btn {
@@ -24,8 +23,7 @@
     background: $main-pink-color;
     color: white;
     opacity: 0;
-    border-radius: 20px;
-    margin-right: 1rem;
+    border-radius: $btn-border;
 }
 
 .search-btn {

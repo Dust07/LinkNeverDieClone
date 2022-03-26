@@ -1,12 +1,12 @@
 @import "../../scss/variables";
 
 @media screen and (max-width: $ipad) {
-    .features-options-wrapper {
-        > ul {
-            flex-direction: column;
-            > li {
-                justify-content: center;
-            }
-        }
+  .features-options-wrapper {
+    > ul {
+      flex-direction: column;
+      > li {
+        justify-content: center;
+      }
     }
+  }
 }

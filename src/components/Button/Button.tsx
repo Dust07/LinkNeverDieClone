@@ -3,12 +3,16 @@ import "./responsive.scss"
 
 interface buttonInterface {
     name: string,
-    className: string
+    className?: string,
+    onClick?: any
 }
 
-function Button({ name, className }: buttonInterface) {
+function Button({ name, className, onClick }: buttonInterface) {
     return (
-        <button className={`btn ${className}`}>{name}</button>
+        <button
+            className={`btn ${className}`}
+            onClick={onClick}
+        >{name}</button>
     )
 }
 

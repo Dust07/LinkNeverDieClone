@@ -2,6 +2,7 @@
 :root {
     font-family: "Quicksand", sans-serif;
     a {
+        width: fit-content;
         text-decoration: none;
         color: inherit;
         cursor: pointer;
@@ -34,7 +35,7 @@ $border-radius: 0.5rem;
 
 //Trim border
 $border: 0.1px solid rgb(0, 0, 0, 0.2);
-
+$btn-border: 20px;
 .container {
     width: 90%;
 }

@@ -1,34 +1,46 @@
-import React, { ChangeEventHandler } from 'react'
+import "./style.scss"
+import "./responsive.scss"
+import { ChangeEventHandler } from 'react'
 
-interface IInput {
-    className?: string,
-    name: string,
-    type?: string,
-    onChange?: ChangeEventHandler
+export interface IInput {
+  label?: string,
+  classNameForLabel?: string
+  className?: string,
+  name: string,
+  type?: string,
+  placeholder?: string,
+  onChange?: ChangeEventHandler
 
 }
 
 function Input({
-    className = "input",
-    type = "text",
-    name,
-    onChange }: IInput) {
+  label = "",
+  classNameForLabel = "",
+  className = "",
+  type = "text",
+  name,
+  placeholder,
+  onChange }: IInput) {
 
-    function capitalizeFirstLetter(text: string) {
-        return text.charAt(0).toUpperCase() + text.slice(1);
-    }
+  function capitalizeFirstLetter(text: string) {
+    return text.charAt(0).toUpperCase() + text.slice(1);
+  }
+  return (
+    <>
+      <label htmlFor={name} className={classNameForLabel}>{label}</label>
+      <input
+        className={`default ${className}`}
+        type={type}
+        id={name}
+        name={name}
+        aria-label={capitalizeFirstLetter(name)}
+        placeholder={placeholder}
+        onChange={onChange}
+      />
 
-    return (
-        <input
-            className={className}
-            type={type}
-            id={name}
-            name={name}
-            aria-label={capitalizeFirstLetter(name)}
-            placeholder={capitalizeFirstLetter(name)}
-            onChange={onChange}
-        />
-    )
+    </>
+
+  )
 }
 
 export default Input

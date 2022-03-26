@@ -1,7 +1,9 @@
 import "./style.scss";
 import "./responsive.scss";
-import Button from '../../../components/Button/Button';
 import { searchCategory } from "../../../mockData/mockdata"
+import Button from '../../../components/Button/Button';
+import Input from "../../../components/Input/Input";
+
 function Search() {
   return (
     <div className="container search-wrapper">
@@ -9,7 +11,7 @@ function Search() {
       </div>
 
       <div className="input-wrapper">
-        <input className="search-field search-input" type="text" name="searchText" id="searchText" placeholder="Bạn đang tìm kiếm nội dung gì?" />
+        <Input className="search-field search-input" name="searchText" placeholder="Bạn đang tìm kiếm nội dung gì?" />
         <select className="search-field search-option" name="searchOption" id="searchOption">
           {searchCategory.map((category, index) => {
             return (
@@ -21,8 +23,6 @@ function Search() {
       <div className="searchBtn-wrapper">
         <Button name="Tìm kiếm" className="search-btn" />
       </div>
-
-
     </div>
   )
 }

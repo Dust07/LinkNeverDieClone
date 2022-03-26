@@ -13,14 +13,6 @@
         justify-content: center;
         align-items: center;
         margin: 1rem;
-        .search-field {
-            font-size: 1rem;
-            padding: 1rem;
-            margin: 0.5rem;
-            width: 100%;
-            border: $border;
-            border-radius: $border-radius;
-        }
     }
     .searchBtn-wrapper {
         display: flex;
@@ -28,6 +20,7 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        margin: 1rem 0;
     }
     .search-wrapper-shadow-effect {
         position: absolute;

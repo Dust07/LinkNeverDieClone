@@ -1,0 +1,13 @@
+@import "../../scss/variables";
+.search-field {
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    width: 100%;
+    border: $border;
+    border-radius: $border-radius;
+}
+.default {
+    border: $border;
+    border-radius: $border-radius;
+}

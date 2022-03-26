@@ -1,0 +1,69 @@
+@import "../../../scss/variables";
+
+.login-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    width: 100%;
+    margin: 2rem 0;
+}
+.login-form-container {
+    width: 90%;
+    height: auto;
+    border-radius: $border-radius;
+    background-color: white;
+}
+.login-form-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 3rem;
+    padding: 1rem 0;
+    border-bottom: $border;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    > label {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    > input {
+        margin-bottom: 2rem;
+        padding: 0.5rem;
+        font-size: 20px;
+    }
+}
+
+.saved-login-info-container {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+    gap: 1rem;
+    font-size: 20px;
+}
+.saved-login-info-checkbox {
+    width: 20px;
+    height: 20px;
+    border: $border;
+}
+.login-page-btn {
+    width: fit-content;
+    margin: 1rem 0;
+}
+.login-form-options {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    padding-bottom: 2rem;
+    line-height: 2rem;
+    p:hover {
+        width: fit-content;
+        cursor: pointer;
+        color: $main-blue-color;
+    }
+}

@@ -1,0 +1,12 @@
+@import "../../scss/variables";
+
+@media screen and (min-width: $laptop) {
+    .search-field {
+        height: 60px;
+        margin: 0;
+        border-radius: 0;
+    }
+    .search-input {
+        width: 70%;
+    }
+}
