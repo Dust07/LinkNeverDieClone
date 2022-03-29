@@ -5,6 +5,8 @@ import DirectoryPath from '../../../components/DirectoryPath/DirectoryPath'
 import Input from "../../../components/Input/Input"
 import Button from "../../../components/Button/Button"
 import { Link } from "react-router-dom"
+import { database } from "../../../firebase-config"
+import { collection, getDocs } from "@firebase/firestore"
 
 function LoginPage() {
   useEffect(() => {
