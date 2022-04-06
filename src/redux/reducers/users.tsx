@@ -2,11 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     isLoading: true,
+    error: null,
     usersData: [],
-    error: null
 }
 
-export const usersSlice = createSlice({
+export default createSlice({
     name: "users",
     initialState: initialState,
     reducers: {
@@ -24,4 +24,3 @@ export const usersSlice = createSlice({
     }
 })
 
-export default usersSlice.reducer;
