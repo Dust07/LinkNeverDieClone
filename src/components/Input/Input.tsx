@@ -3,6 +3,7 @@ import "./responsive.scss"
 import { ChangeEventHandler } from 'react'
 
 export interface IInput {
+  value?: string
   label?: string,
   classNameForLabel?: string
   className?: string,
@@ -14,6 +15,7 @@ export interface IInput {
 }
 
 function Input({
+  value = "",
   label = "",
   classNameForLabel = "",
   className = "",
@@ -29,6 +31,7 @@ function Input({
     <>
       <label htmlFor={name} className={classNameForLabel}>{label}</label>
       <input
+        value={value}
         className={`default ${className}`}
         type={type}
         id={name}

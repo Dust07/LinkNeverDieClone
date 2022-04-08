@@ -8,6 +8,7 @@ import ErrorPage from './containers/error-page/ErrorPage';
 
 function App() {
   return (
+    // <Loader>
     <div className="App">
       <Router>
         <Layout>
@@ -20,6 +21,8 @@ function App() {
         </Layout>
       </Router>
     </div>
+    // </Loader>
+
   );
 }
 
