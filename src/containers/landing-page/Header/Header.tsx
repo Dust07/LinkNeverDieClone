@@ -17,7 +17,7 @@ function Header() {
 
             <div className="header-btn-wrapper">
                 <Link to="/register">
-                    <Button name="Đăng ký" className="signup-btn" />
+                    <Button name="Đăng ký" className="signup-btn-hidden" />
                 </Link>
                 <Link to="/login">
                     <Button name="Đăng nhập" className="login-btn" />

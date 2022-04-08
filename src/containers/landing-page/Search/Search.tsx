@@ -11,7 +11,7 @@ function Search() {
       </div>
 
       <div className="input-wrapper">
-        <Input className="search-field search-input" name="searchText" placeholder="Bạn đang tìm kiếm nội dung gì?" />
+        <Input className="search-field search-input" value="" name="searchText" placeholder="Bạn đang tìm kiếm nội dung gì?" />
         <select className="search-field search-option" name="searchOption" id="searchOption">
           {searchCategory.map((category, index) => {
             return (

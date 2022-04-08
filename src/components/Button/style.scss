@@ -18,11 +18,18 @@
     border-radius: $btn-border;
 }
 
-.signup-btn {
+.signup-btn-hidden {
     position: absolute;
     background: $main-pink-color;
     color: white;
-    opacity: 0;
+    display: none;
+    border-radius: $btn-border;
+}
+
+.signup-btn-normal {
+    position: relative;
+    background: $main-pink-color;
+    color: white;
     border-radius: $btn-border;
 }
 
