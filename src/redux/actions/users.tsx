@@ -48,7 +48,6 @@ export const fetchUsersCheckExist = ({ username, password }: {
       dispatch(usersSlice.actions.FETCH_USERS_SUCCESS(currentUser))
       if (currentUser) console.log(`Login successful! Welcome back, ${currentUser.user_display_name}`)
       else console.log("Login failed! Please try again")
-
     } catch (error) {
       dispatch(usersSlice.actions.FETCH_USERS_SUCCESS(error))
       console.log("fetched failed")

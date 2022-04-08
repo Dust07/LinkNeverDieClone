@@ -1,23 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { UserInterface } from "../../interfaces/userInterfaces";
 
 interface IInitialUsersState {
   message: string | null,
   isLoading: boolean,
   error: string | null,
-  userData: string[],
+  userData: UserInterface | UserInterface[] | null,
 }
 
 const initialState: IInitialUsersState = {
   message: null,
-  isLoading: true,
+  isLoading: false,
   error: null,
-  userData: [],
+  userData: null,
 }
 
 export const usersSlice = createSlice({
   name: "users",
   initialState: initialState,
   reducers: {
+    //Fetch data from API
     FETCH_USERS: (state, action) => {
       state.isLoading = true
       state.message = action.payload
@@ -26,13 +28,14 @@ export const usersSlice = createSlice({
       state.userData = action.payload
       state.isLoading = false
       state.message = null
-
     },
     FETCH_USERS_FAILED: (state, action) => {
       state.error = action.payload
       state.isLoading = false
       state.message = null
     },
+
+    //Create new user
     CREATE_NEW_USER: (state, action) => {
       state.isLoading = true
       state.message = action.payload
