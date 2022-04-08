@@ -5,25 +5,10 @@ import Layout from './containers/Layout/Layout';
 import LoginPage from './containers/login-register-page/login-page/LoginPage';
 import RegisterPage from './containers/login-register-page/register-page/RegisterPage';
 import ErrorPage from './containers/error-page/ErrorPage';
-import { useEffect, useState } from 'react'
-import { database } from './firebase-config';
-import { collection, getDocs } from "firebase/firestore"
 
 function App() {
-  const [users, setUsers] = useState<any>([]);
-  const usersCollectionRef = collection(database, "users");
-
-  useEffect(() => {
-    const getUsers = async () => {
-      const data = await getDocs(usersCollectionRef);
-      setUsers(data.docs.map((doc) => ({
-        id: doc.id, ...doc.data()
-      })));
-    }
-    getUsers();
-  })
-
   return (
+    // <Loader>
     <div className="App">
       <Router>
         <Layout>
@@ -36,6 +21,8 @@ function App() {
         </Layout>
       </Router>
     </div>
+    // </Loader>
+
   );
 }
 

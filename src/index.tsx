@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import { configureStore } from "@reduxjs/toolkit"
 import { Provider } from "react-redux"
-import usersSlice from "./redux/reducers/users"
+import { usersSlice } from "./redux/reducers/users"
 
 const store = configureStore({
   reducer: {
