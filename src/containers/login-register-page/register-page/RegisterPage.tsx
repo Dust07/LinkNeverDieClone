@@ -5,15 +5,15 @@ import DirectoryPath from '../../../components/DirectoryPath/DirectoryPath'
 import Button from '../../../components/Button/Button'
 import { useDispatch } from 'react-redux'
 import { addNewUser } from '../../../redux/actions/users'
-import { addNewUserFB } from '../../../redux/actions/users-firebase-authenticate'
+import { addNewUserFB, updateFBUser } from '../../../redux/actions/users-firebase-authenticate'
 
 function RegisterPage() {
   const dispatch = useDispatch();
-  const [newUsername, setNewUsername] = useState<string>("");
+  const [newEmail, setNewEmail] = useState<string>("");
   const [newPassword, setNewPassword] = useState<string>("");
   const [checkPassword, setCheckPassword] = useState<string>("");
   const [newUserFullname, setNewUserFullname] = useState<string>("");
-  const [newEmail, setNewEmail] = useState<string>("");
+  const [newPhotoURL, setPhotoURL] = useState<string>("N/A");
 
   const handleSubmitRegister = (e: any) => {
     e.preventDefault()
@@ -21,28 +21,20 @@ function RegisterPage() {
       console.log("Password doesn't match, please try again.")
       return
     }
-    dispatch(addNewUser({
-      username: newUsername,
-      password: newPassword,
+    addNewUserFB({
       email: newEmail,
-      user_full_name: newUserFullname
-    }))
+      password: newPassword,
+      displayName: newUserFullname,
+      photoURL: newPhotoURL,
+    })
   }
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
 
   return (
     <>
-      <div>
-        <button onClick={() => addNewUserFB({
-          email: "emailtest",
-          password: "passwordtest"
-        })}>
-          TEST BUTTON
-        </button>
-      </div>
-
       <DirectoryPath currentDirectory="register" />
       <div className="login-form-wrapper">
         <div className="login-form-container">
@@ -52,13 +44,7 @@ function RegisterPage() {
           </div>
           <div className="login-form-input-wrapper">
             <form className="login-form">
-              <Input
-                label="Tên của bạn:"
-                name="username"
-                value={newUserFullname}
-                onChange={(e) => setNewUserFullname((e.target as HTMLTextAreaElement).value)}
-                classNameForLabel="login-register-form-label" className="login-register-form-input-field"
-                placeholder="Họ tên của bạn" />
+
               <Input
                 label="Email:"
                 name="email"
@@ -66,13 +52,6 @@ function RegisterPage() {
                 onChange={(e) => setNewEmail((e.target as HTMLTextAreaElement).value)}
                 classNameForLabel="login-register-form-label" className="login-register-form-input-field"
                 placeholder="Email của bạn" />
-              <Input
-                label="Tên đăng nhập:"
-                name="id"
-                value={newUsername}
-                onChange={(e) => setNewUsername((e.target as HTMLTextAreaElement).value)}
-                classNameForLabel="login-register-form-label" className="login-register-form-input-field"
-                placeholder="ID Tài khoản" />
               <Input
                 label="Mật khẩu:"
                 type="password"
@@ -89,6 +68,13 @@ function RegisterPage() {
                 onChange={(e) => setCheckPassword((e.target as HTMLTextAreaElement).value)}
                 classNameForLabel="login-register-form-label" className="login-register-form-input-field"
                 placeholder="Nhập lại mật khẩu" />
+              <Input
+                label="Tên của bạn:"
+                name="username"
+                value={newUserFullname}
+                onChange={(e) => setNewUserFullname((e.target as HTMLTextAreaElement).value)}
+                classNameForLabel="login-register-form-label" className="login-register-form-input-field"
+                placeholder="Họ tên của bạn" />
               <Button name="Đăng ký" className="signup-btn-normal login-register-page-btn" onClick={(e: any) => handleSubmitRegister(e)} />
             </form>
           </div>
