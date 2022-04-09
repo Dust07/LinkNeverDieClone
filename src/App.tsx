@@ -6,11 +6,13 @@ import LoginPage from './containers/login-register-page/login-page/LoginPage';
 import RegisterPage from './containers/login-register-page/register-page/RegisterPage';
 import ErrorPage from './containers/error-page/ErrorPage';
 import Loader from './containers/loader/Loader';
-
+import { useSelector } from "react-redux"
 function App() {
+  const isLoading = useSelector((state: any) => state.users.isLoading)
+  console.log(isLoading)
   return (
     <>
-      <Loader />
+      {isLoading && <Loader />}
       <div className="App">
         <Router>
           <Layout>

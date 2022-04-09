@@ -5,6 +5,7 @@ import DirectoryPath from '../../../components/DirectoryPath/DirectoryPath'
 import Button from '../../../components/Button/Button'
 import { useDispatch } from 'react-redux'
 import { addNewUser } from '../../../redux/actions/users'
+import { addNewUserFB } from '../../../redux/actions/users-firebase-authenticate'
 
 function RegisterPage() {
   const dispatch = useDispatch();
@@ -33,6 +34,15 @@ function RegisterPage() {
 
   return (
     <>
+      <div>
+        <button onClick={() => addNewUserFB({
+          email: "emailtest",
+          password: "passwordtest"
+        })}>
+          TEST BUTTON
+        </button>
+      </div>
+
       <DirectoryPath currentDirectory="register" />
       <div className="login-form-wrapper">
         <div className="login-form-container">

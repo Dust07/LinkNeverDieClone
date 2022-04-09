@@ -28,7 +28,8 @@ const usersCollectionRef = collection(database, "users");
 //   }
 // }
 
-export const fetchUsersCheckExist = ({ username, password }: {
+//Sign in with Username/Password (Custom)
+export const userLogin = ({ username, password }: {
   username: string,
   password: string
 }) => {
@@ -55,6 +56,8 @@ export const fetchUsersCheckExist = ({ username, password }: {
   }
 }
 
+
+//Add new profile to database
 export const addNewUser = ({ username, password, email, user_full_name }: UserInterface) => {
   return async (dispatch: any) => {
     const usersArray: any = []

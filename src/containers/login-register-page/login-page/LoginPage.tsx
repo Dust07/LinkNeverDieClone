@@ -5,7 +5,7 @@ import Input from "../../../components/Input/Input"
 import Button from "../../../components/Button/Button"
 import { Link } from "react-router-dom"
 import { useEffect, useState } from 'react'
-import { fetchUsersCheckExist } from '../../../redux/actions/users';
+import { userLogin } from '../../../redux/actions/users';
 import { useSelector, useDispatch } from 'react-redux';
 
 function LoginPage() {
@@ -20,7 +20,7 @@ function LoginPage() {
 
   const handleSubmitLogin = (e: any) => {
     e.preventDefault();
-    dispatch(fetchUsersCheckExist({
+    dispatch(userLogin({
       username,
       password
     }));
