@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { userSignIn } from "../../../redux/actions/users-firebase-authenticate"
 import { usersSlice } from "../../../redux/reducers/users"
+import { modalSlice } from "../../../redux/reducers/modal"
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -35,7 +36,6 @@ function LoginPage() {
       dispatch(usersSlice.actions.USER_SIGN_IN_SUCCESS("SIGN IN FAILED! Please try again"))
     }
   }
-
   return (
     <>
       <DirectoryPath currentDirectory="login" />
