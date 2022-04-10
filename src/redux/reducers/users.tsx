@@ -20,7 +20,7 @@ export const usersSlice = createSlice({
   initialState: initialState,
   reducers: {
     //Fetch data from API
-    FETCH_USERS: (state, action) => {
+    FETCH_USER: (state, action) => {
       state.isLoading = true
       state.message = action.payload
     },
@@ -43,8 +43,26 @@ export const usersSlice = createSlice({
     CREATE_NEW_USER_FAILED: (state, action) => {
       state.isLoading = false
       state.error = action.payload
+    },
+
+    USER_SIGN_OUT_SUCCESS: (state, action) => {
+      state.isLoading = false
+      state.message = action.payload
+
+    },
+    USER_SIGN_OUT_FAILED: (state, action) => {
+      state.isLoading = false
+      state.error = action.payload
+    },
+
+    USER_SIGN_IN_SUCCESS: (state, action) => {
+      state.isLoading = false
+      state.message = action.payload
+
+    },
+    USER_SIGN_IN_FAILED: (state, action) => {
+      state.isLoading = false
+      state.error = action.payload
     }
   }
 })
-
-export const { FETCH_USERS } = usersSlice.actions

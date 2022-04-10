@@ -3,29 +3,39 @@ import "../responsive.scss"
 import DirectoryPath from '../../../components/DirectoryPath/DirectoryPath'
 import Input from "../../../components/Input/Input"
 import Button from "../../../components/Button/Button"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState } from 'react'
-import { userLogin } from '../../../redux/actions/users';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { userSignIn } from "../../../redux/actions/users-firebase-authenticate"
+import { usersSlice } from "../../../redux/reducers/users"
 
 function LoginPage() {
   const dispatch = useDispatch();
-
-  const [username, setUsername] = useState<string>("")
+  const navigate = useNavigate();
+  const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
 
-  const handleSubmitLogin = (e: any) => {
+  const handleSubmitLogin = async (e: any) => {
     e.preventDefault();
-    dispatch(userLogin({
-      username,
-      password
-    }));
+    dispatch(usersSlice.actions.FETCH_USER("Fetching"))
+    try {
+      await userSignIn({
+        email,
+        password
+      })
+      dispatch(usersSlice.actions.USER_SIGN_IN_SUCCESS("SIGN IN SUCCESSFULLY"))
+      navigate('/', { replace: true })
 
+    }
+    catch (error) {
+      dispatch(usersSlice.actions.USER_SIGN_IN_SUCCESS("SIGN IN FAILED! Please try again"))
+    }
   }
+
   return (
     <>
       <DirectoryPath currentDirectory="login" />
@@ -38,8 +48,8 @@ function LoginPage() {
           <div className="login-form-input-wrapper">
             <form className="login-form">
               <Input
-                value={username}
-                onChange={(e) => setUsername((e.target as HTMLTextAreaElement).value)}
+                value={email}
+                onChange={(e) => setEmail((e.target as HTMLTextAreaElement).value)}
                 label="Tên đăng nhập:"
                 name="id"
                 classNameForLabel="login-register-form-label" className="login-register-form-input-field"

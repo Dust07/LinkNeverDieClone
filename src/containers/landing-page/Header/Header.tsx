@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import "./style.scss";
 import "./responsive.scss";
 import { Link } from 'react-router-dom';
@@ -9,10 +9,8 @@ import logo from "../../../assets/logo.png";
 import Button from '../../../components/Button/Button';
 import UserInfoHeader from '../../../components/UserInfoHeader/UserInfoHeader';
 
-
-
-
 function Header() {
+
     const [loginStatus, setLoginStatus] = useState<boolean>(false);
     const [currentUserDisplayName, setCurrentUserDisplayName] = useState<string | null>("Default Statename")
     useEffect(() => {

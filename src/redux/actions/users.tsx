@@ -7,7 +7,7 @@ const usersCollectionRef = collection(database, "users");
 
 // export const fetchUsers = () => {
 //   return async (dispatch: any) => {
-//     dispatch(usersSlice.actions.FETCH_USERS)
+//     dispatch(usersSlice.actions.FETCH_USER)
 //     try {
 //       const usersFromAPI: any = []
 //       const firebaseData = await getDocs(usersCollectionRef);
@@ -34,7 +34,7 @@ export const userLogin = ({ username, password }: {
   password: string
 }) => {
   return async (dispatch: any) => {
-    dispatch(usersSlice.actions.FETCH_USERS, "fetching")
+    dispatch(usersSlice.actions.FETCH_USER, "fetching")
 
     try {
       const usersArray: any = []
@@ -68,7 +68,7 @@ export const addNewUser = ({ username, password, email, user_full_name }: UserIn
         ...doc.data()
       })
     })
-    dispatch(usersSlice.actions.FETCH_USERS, "Creating new profile")
+    dispatch(usersSlice.actions.FETCH_USER, "Creating new profile")
     try {
       if (usersArray.some((user: any) => user.username === username)) {
         throw "User already exist. Please try again"

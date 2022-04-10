@@ -1,10 +1,27 @@
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
 import { UserInterface } from "../../interfaces/userInterfaces";
 import { auth } from "../../firebase-config";
 
-export const addNewUserFB = async ({ email, password, displayName = "Default Name", photoURL = "N/A" }: UserInterface) => {
-  await createUserWithEmailAndPassword(auth, email, password)
+export const userSignIn = async ({ email, password }: {
+  email: string,
+  password: string
+}) => {
   try {
+    await signInWithEmailAndPassword(auth, email, password)
+  }
+  catch (error) {
+    console.log("Error while signing in!" + error)
+
+  }
+}
+
+export const userSignOut = async () => {
+  await signOut(auth)
+}
+
+export const addNewUserFB = async ({ email, password, displayName = "Default Name", photoURL = "N/A" }: UserInterface) => {
+  try {
+    await createUserWithEmailAndPassword(auth, email, password)
     const user = auth.currentUser;
     if (user !== null) {
       updateProfile(user, {
@@ -14,7 +31,7 @@ export const addNewUserFB = async ({ email, password, displayName = "Default Nam
     }
   }
   catch (error) {
-    console.log("THIS IS AN ERROR!" + error)
+    console.log("Error while adding new profile!" + error)
   }
 }
 

@@ -6,6 +6,7 @@ import { usersSlice } from '../../../redux/reducers/users'
 import Input from '../../../components/Input/Input'
 import DirectoryPath from '../../../components/DirectoryPath/DirectoryPath'
 import Button from '../../../components/Button/Button'
+
 function RegisterPage() {
   const dispatch = useDispatch();
   let navigate = useNavigate();
@@ -21,7 +22,7 @@ function RegisterPage() {
       console.log("Password doesn't match, please try again.")
       return
     }
-    dispatch(usersSlice.actions.FETCH_USERS("Fetching"))
+    dispatch(usersSlice.actions.FETCH_USER("Fetching"))
     try {
       await addNewUserFB({
         email: newEmail,
