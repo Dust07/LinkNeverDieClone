@@ -3,16 +3,13 @@ import "../responsive.scss"
 import DirectoryPath from '../../../components/DirectoryPath/DirectoryPath'
 import Input from "../../../components/Input/Input"
 import Button from "../../../components/Button/Button"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
 import { userSignIn } from "../../../redux/actions/users-firebase-authenticate"
-import { usersSlice } from "../../../redux/reducers/users"
-import { modalSlice } from "../../../redux/reducers/modal"
+import { useDispatch } from "react-redux"
 
 function LoginPage() {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const dispatch = useDispatch()
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
 
@@ -22,19 +19,10 @@ function LoginPage() {
 
   const handleSubmitLogin = async (e: any) => {
     e.preventDefault();
-    dispatch(usersSlice.actions.FETCH_USER("Fetching"))
-    try {
-      await userSignIn({
-        email,
-        password
-      })
-      dispatch(usersSlice.actions.USER_SIGN_IN_SUCCESS("SIGN IN SUCCESSFULLY"))
-      navigate('/', { replace: true })
-
-    }
-    catch (error) {
-      dispatch(usersSlice.actions.USER_SIGN_IN_SUCCESS("SIGN IN FAILED! Please try again"))
-    }
+    dispatch(userSignIn({
+      email,
+      password
+    }))
   }
   return (
     <>

@@ -35,7 +35,6 @@ export const userLogin = ({ username, password }: {
 }) => {
   return async (dispatch: any) => {
     dispatch(usersSlice.actions.FETCH_USER, "fetching")
-
     try {
       const usersArray: any = []
       const firebaseData = await getDocs(usersCollectionRef);

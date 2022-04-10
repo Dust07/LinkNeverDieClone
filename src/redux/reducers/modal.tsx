@@ -3,13 +3,13 @@ import { createSlice } from '@reduxjs/toolkit'
 interface IModalInterface {
   msg: string | null
   isShow: boolean
-  warning: boolean
+  normalModal: boolean
 }
 
 const initialState: IModalInterface = {
-  msg: "Error occurred! Please try again.",
+  msg: "",
   isShow: false,
-  warning: false
+  normalModal: true
 }
 
 export const modalSlice = createSlice({
@@ -19,16 +19,16 @@ export const modalSlice = createSlice({
     SHOW_MODAL_NORMAL: (state, action) => {
       state.isShow = true
       state.msg = action.payload
-      state.warning = false
+      state.normalModal = true
     },
     SHOW_MODAL_WARNING: (state, action) => {
       state.isShow = true
       state.msg = action.payload
-      state.warning = true
+      state.normalModal = false
     },
     HIDE_MODAL: (state) => {
       state.isShow = false
-      state.msg = "Error occurred! Please try again."
+      state.msg = ""
     }
   }
 });

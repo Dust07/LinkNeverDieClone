@@ -14,12 +14,12 @@ function Modal() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const modalText = useSelector((state: any) => state.modal.msg)
-  const modalType = useSelector((state: any) => state.modal.warning)
+  const normalModal = useSelector((state: any) => state.modal.normalModal)
 
   const handleCloseModal = () => {
     console.log("asdasd")
     dispatch(modalSlice.actions.HIDE_MODAL())
-    if (!modalType)
+    if (normalModal)
       navigate("/", { replace: true })
   }
 
@@ -30,10 +30,10 @@ function Modal() {
           <FontAwesomeIcon icon={faClose} onClick={() => handleCloseModal()} />
         </div>
         <div className="modal-icon-container">
-          <FontAwesomeIcon icon={modalType ? faXmark : faCheckCircle} className={modalType ? "warning-modal-icon" : "normal-modal-icon"} />
+          <FontAwesomeIcon icon={normalModal ? faCheckCircle : faXmark} className={normalModal ? "normal-modal-icon" : "warning-modal-icon"} />
         </div>
         <div className="modal-text-container">{modalText}</div>
-        <Button name={modalType ? "Thử lại" : "Tiếp tục"} className={`modal-btn ${modalType ? "warning-btn" : "login-btn"}`} onClick={() => handleCloseModal()} />
+        <Button name={normalModal ? "Tiếp tục" : "Thử lại"} className={`modal-btn ${normalModal ? "login-btn" : "warning-btn"}`} onClick={() => handleCloseModal()} />
       </div>
     </div>
   )

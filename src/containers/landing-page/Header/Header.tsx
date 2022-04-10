@@ -8,19 +8,21 @@ import { useState } from 'react';
 import logo from "../../../assets/logo.png";
 import Button from '../../../components/Button/Button';
 import UserInfoHeader from '../../../components/UserInfoHeader/UserInfoHeader';
+import { useSelector } from 'react-redux';
 
 function Header() {
-
+    const isLoading = useSelector((state: any) => state.users.isLoading)
     const [loginStatus, setLoginStatus] = useState<boolean>(false);
     const [currentUserDisplayName, setCurrentUserDisplayName] = useState<string | null>("Default Statename")
+    console.log("isloading: " + isLoading)
+    console.log("loginStatus: " + loginStatus)
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 setLoginStatus(true)
                 setCurrentUserDisplayName(user.displayName)
-            } else {
-                setLoginStatus(false)
             }
+            else setLoginStatus(false)
         });
     }, [])
 
@@ -30,11 +32,9 @@ function Header() {
                 <Link to="/">
                     <img src={logo} alt="logo" className="header-logo" />
                 </Link>
-
             </div>
 
-
-            {!loginStatus && <div className="header-btn-wrapper">
+            {!isLoading && !loginStatus && <div className="header-btn-wrapper">
                 <Link to="/register">
                     <Button name="Đăng ký" className="signup-btn-hidden" />
                 </Link>
@@ -43,7 +43,7 @@ function Header() {
                 </Link>
             </div>}
 
-            {loginStatus && <UserInfoHeader displayName={currentUserDisplayName} />}
+            {!isLoading && loginStatus && <UserInfoHeader displayName={currentUserDisplayName} />}
         </div>
     )
 }

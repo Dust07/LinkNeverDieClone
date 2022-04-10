@@ -6,5 +6,5 @@ export interface UserInterface {
   photoURL?: string | null,
   user_full_name?: string | null
   privilege?: string | null,
-
+  checkPassword?: string | null
 }
