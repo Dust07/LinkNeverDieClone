@@ -5,6 +5,7 @@ import Hero from './Hero/Hero'
 import Search from './Search/Search'
 
 function LandingPage() {
+
   return (
     <>
       <Hero />

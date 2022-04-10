@@ -1,0 +1,16 @@
+@import "../../scss/variables";
+
+.user-info-header {
+    text-align: center;
+}
+
+.user-header-img {
+    margin-top: 0.5rem;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.user-header-text {
+    font-weight: 700;
+}

@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addNewUserFB } from '../../../redux/actions/users-firebase-authenticate'
+import { usersSlice } from '../../../redux/reducers/users'
 import Input from '../../../components/Input/Input'
 import DirectoryPath from '../../../components/DirectoryPath/DirectoryPath'
 import Button from '../../../components/Button/Button'
-import { useDispatch, useSelector } from 'react-redux'
-import { addNewUserFB } from '../../../redux/actions/users-firebase-authenticate'
-import { usersSlice } from '../../../redux/reducers/users'
-
 function RegisterPage() {
   const dispatch = useDispatch();
+  let navigate = useNavigate();
   const [newEmail, setNewEmail] = useState<string>("");
   const [newPassword, setNewPassword] = useState<string>("");
   const [checkPassword, setCheckPassword] = useState<string>("");
@@ -30,10 +30,9 @@ function RegisterPage() {
         photoURL: newPhotoURL,
       })
       dispatch(usersSlice.actions.CREATE_NEW_USER_SUCCESS("New profile created"))
-
+      navigate('/', { replace: true })
     } catch (error) {
       dispatch(usersSlice.actions.CREATE_NEW_USER_FAILED("Failed, please try again"))
-
     }
   }
 
