@@ -10,7 +10,6 @@ import Loader from './components/Loader/Loader';
 
 function App() {
   const isLoading = useSelector((state: any) => state.users.isLoading)
-  console.log(isLoading)
   return (
     <>
       {isLoading && <Loader />}

@@ -2,28 +2,23 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { UserInterface } from "../../interfaces/userInterfaces";
 import { auth } from "../../firebase-config";
 
-//Add new profile with Firebase's Email/password SDKs
-export const addNewUserFB = ({ email, password, displayName = "Default Name", photoURL = "N/A" }: UserInterface) => {
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      const user = auth.currentUser;
-      if (user !== null) {
-        updateProfile(user, {
-          displayName,
-          photoURL
-        }).then(() => {
-          console.log("Profile created!")
-        }).catch((error) => {
-          console.log("Error occured when adding new profile. " + error)
-        });
-      }
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+export const addNewUserFB = async ({ email, password, displayName = "Default Name", photoURL = "N/A" }: UserInterface) => {
+  await createUserWithEmailAndPassword(auth, email, password)
+  try {
+    const user = auth.currentUser;
+    if (user !== null) {
+      updateProfile(user, {
+        displayName,
+        photoURL
+      })
+    }
+  }
+  catch (error) {
+    console.log("THIS IS AN ERROR!" + error)
+  }
 }
 
-export const updateFBUser = ({ displayName = "", photoURL = "" }: any) => {
+export const updateUserFB = ({ displayName = "", photoURL = "" }: any) => {
   const user = auth.currentUser;
   if (user !== null) {
     updateProfile(user, {

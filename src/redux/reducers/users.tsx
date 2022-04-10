@@ -35,21 +35,16 @@ export const usersSlice = createSlice({
       state.message = null
     },
 
-    //Create new user
-    CREATE_NEW_USER: (state, action) => {
-      state.isLoading = true
-      state.message = action.payload
-
-    },
     CREATE_NEW_USER_SUCCESS: (state, action) => {
       state.isLoading = false
       state.message = action.payload
 
     },
     CREATE_NEW_USER_FAILED: (state, action) => {
-      state.isLoading = true
+      state.isLoading = false
       state.error = action.payload
     }
   }
 })
 
+export const { FETCH_USERS } = usersSlice.actions

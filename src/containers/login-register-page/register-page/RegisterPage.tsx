@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import Input from '../../../components/Input/Input'
 import DirectoryPath from '../../../components/DirectoryPath/DirectoryPath'
 import Button from '../../../components/Button/Button'
-import { useDispatch } from 'react-redux'
-import { addNewUser } from '../../../redux/actions/users'
-import { addNewUserFB, updateFBUser } from '../../../redux/actions/users-firebase-authenticate'
+import { useDispatch, useSelector } from 'react-redux'
+import { addNewUserFB } from '../../../redux/actions/users-firebase-authenticate'
+import { usersSlice } from '../../../redux/reducers/users'
 
 function RegisterPage() {
   const dispatch = useDispatch();
@@ -15,18 +15,26 @@ function RegisterPage() {
   const [newUserFullname, setNewUserFullname] = useState<string>("");
   const [newPhotoURL, setPhotoURL] = useState<string>("N/A");
 
-  const handleSubmitRegister = (e: any) => {
+  const handleSubmitRegister = async (e: any) => {
     e.preventDefault()
     if (newPassword !== checkPassword) {
       console.log("Password doesn't match, please try again.")
       return
     }
-    addNewUserFB({
-      email: newEmail,
-      password: newPassword,
-      displayName: newUserFullname,
-      photoURL: newPhotoURL,
-    })
+    dispatch(usersSlice.actions.FETCH_USERS("Fetching"))
+    try {
+      await addNewUserFB({
+        email: newEmail,
+        password: newPassword,
+        displayName: newUserFullname,
+        photoURL: newPhotoURL,
+      })
+      dispatch(usersSlice.actions.CREATE_NEW_USER_SUCCESS("New profile created"))
+
+    } catch (error) {
+      dispatch(usersSlice.actions.CREATE_NEW_USER_FAILED("Failed, please try again"))
+
+    }
   }
 
   useEffect(() => {

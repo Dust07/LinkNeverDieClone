@@ -68,7 +68,7 @@ export const addNewUser = ({ username, password, email, user_full_name }: UserIn
         ...doc.data()
       })
     })
-    dispatch(usersSlice.actions.CREATE_NEW_USER, "Creating new profile")
+    dispatch(usersSlice.actions.FETCH_USERS, "Creating new profile")
     try {
       if (usersArray.some((user: any) => user.username === username)) {
         throw "User already exist. Please try again"
