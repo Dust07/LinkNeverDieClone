@@ -38,6 +38,7 @@ export const addNewUserFB = ({ email, password, displayName = "Default Name", ph
 
 export const updateUserFB = ({ displayName = "", photoURL = "" }: any) => {
   return async (dispatch: any) => {
+    dispatch(usersSlice.actions.FETCH_USER("fetching"))
     try {
       const user = auth.currentUser
       if (user !== null) {
@@ -46,9 +47,13 @@ export const updateUserFB = ({ displayName = "", photoURL = "" }: any) => {
           photoURL
         })
       }
+      dispatch(modalSlice.actions.SHOW_MODAL_NORMAL("Successfully updated information!"))
+      dispatch(usersSlice.actions.USER_UPDATE_SUCCESS("Profile Updated!"))
+
     }
     catch (error) {
-      dispatch(modalSlice.actions.SHOW_MODAL_WARNING("Error occured while updating profile!"))
+      dispatch(modalSlice.actions.SHOW_MODAL_WARNING("Error occured while updating profile. Please try again."))
+      dispatch(usersSlice.actions.USER_UPDATE_FAILED("Error occured while updating profile."))
     }
   }
 }

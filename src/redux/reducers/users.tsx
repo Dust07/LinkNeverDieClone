@@ -35,6 +35,7 @@ export const usersSlice = createSlice({
       state.message = null
     },
 
+    //CREATE
     CREATE_NEW_USER_SUCCESS: (state, action) => {
       state.isLoading = false
       state.message = action.payload
@@ -45,6 +46,7 @@ export const usersSlice = createSlice({
       state.error = action.payload
     },
 
+    //SIGNIN - SIGNOUT
     USER_SIGN_OUT_SUCCESS: (state, action) => {
       state.isLoading = false
       state.message = action.payload
@@ -63,6 +65,21 @@ export const usersSlice = createSlice({
     USER_SIGN_IN_FAILED: (state, action) => {
       state.isLoading = false
       state.error = action.payload
+    },
+
+    //UPDATE
+    USER_UPDATE_INIT: (state, action) => {
+      state.isLoading = true
+      state.message = action.payload
+    },
+    USER_UPDATE_SUCCESS: (state, action) => {
+      state.isLoading = false
+      state.message = action.payload
+    },
+    USER_UPDATE_FAILED: (state, action) => {
+      state.isLoading = false
+      state.message = action.payload
     }
+
   }
 })

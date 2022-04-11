@@ -14,13 +14,12 @@ function Header() {
     const isLoading = useSelector((state: any) => state.users.isLoading)
     const showModal = useSelector((state: any) => state.modal.isShow)
     const [loginStatus, setLoginStatus] = useState<boolean>(false);
-    const [currentUserDisplayName, setCurrentUserDisplayName] = useState<string | null>("Default Statename")
+    const displayName = auth.currentUser?.displayName || null;
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 setLoginStatus(true)
-                setCurrentUserDisplayName(user.displayName)
             }
             else setLoginStatus(false)
         });
@@ -43,7 +42,7 @@ function Header() {
                 </Link>
             </div>}
 
-            {!isLoading && loginStatus && !showModal && <UserInfoHeader displayName={currentUserDisplayName} />}
+            {!isLoading && loginStatus && !showModal && <UserInfoHeader displayName={displayName} />}
         </div>
     )
 }
