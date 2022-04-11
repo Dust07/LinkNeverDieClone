@@ -42,7 +42,7 @@ function UserInfoHeader({ displayName = "Default Username", photoURL = "https://
           <ul className="user-header-option-list">
             <li>
               <Link to={`/profile/${auth.currentUser?.displayName
-                }`}>
+                }`} onClick={() => setShowPopup(false)}>
                 <FontAwesomeIcon icon={faUser} />
                 <p>Profile</p>
               </Link>

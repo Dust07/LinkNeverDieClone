@@ -41,8 +41,8 @@ function LoginPage() {
                 label="Tên đăng nhập:"
                 name="id"
                 classNameForLabel="login-register-form-label" className="login-register-form-input-field"
-                placeholder="ID Tài khoản" />
-
+                placeholder="ID Tài khoản"
+              />
               <Input
                 value={password}
                 onChange={(e) => setPassword((e.target as HTMLTextAreaElement).value)}
@@ -57,7 +57,6 @@ function LoginPage() {
                 <label htmlFor="saved-login-info">Ghi nhớ đăng nhập</label>
               </div>
               <Button name="Đăng nhập" className="login-btn login-page-btn" onClick={(e: any) => handleSubmitLogin(e)} />
-
             </form>
           </div>
 

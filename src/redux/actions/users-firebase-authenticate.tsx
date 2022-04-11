@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut, deleteUser } from "firebase/auth";
 import { UserInterface } from "../../interfaces/userInterfaces";
 import { auth } from "../../firebase-config";
 import { modalSlice } from "../reducers/modal";
@@ -19,9 +19,8 @@ export const addNewUserFB = ({ email, password, displayName = "Default Name", ph
       dispatch(modalSlice.actions.SHOW_MODAL_WARNING("Password need to have at least 7 characters."))
       return
     }
-
     //Push to database
-    dispatch(usersSlice.actions.FETCH_USER)
+    dispatch(usersSlice.actions.FETCH_USER("fetching"))
     try {
       await createUserWithEmailAndPassword(auth, email, password)
       const user = auth.currentUser;
@@ -46,10 +45,9 @@ export const updateUserFB = ({ displayName = "", photoURL = "" }: any) => {
           displayName,
           photoURL
         })
+        dispatch(modalSlice.actions.SHOW_MODAL_NORMAL("Successfully updated information!"))
+        dispatch(usersSlice.actions.USER_UPDATE_SUCCESS("Profile Updated!"))
       }
-      dispatch(modalSlice.actions.SHOW_MODAL_NORMAL("Successfully updated information!"))
-      dispatch(usersSlice.actions.USER_UPDATE_SUCCESS("Profile Updated!"))
-
     }
     catch (error) {
       dispatch(modalSlice.actions.SHOW_MODAL_WARNING("Error occured while updating profile. Please try again."))
@@ -58,6 +56,22 @@ export const updateUserFB = ({ displayName = "", photoURL = "" }: any) => {
   }
 }
 
+export const deleteUserFB = () => {
+  return async (dispatch: any) => {
+    dispatch(usersSlice.actions.FETCH_USER("fetching"))
+    try {
+      const user = auth.currentUser
+      if (user !== null) {
+        deleteUser(user)
+        dispatch(modalSlice.actions.SHOW_MODAL_NORMAL("Successfully deleted this profile!"))
+        dispatch(usersSlice.actions.USER_UPDATE_SUCCESS("Profile Deleted!"))
+      }
+    } catch (error) {
+      dispatch(modalSlice.actions.SHOW_MODAL_WARNING("Error occured while deleting profile. Please try again."))
+      dispatch(usersSlice.actions.USER_UPDATE_FAILED("Error occured while deleting profile."))
+    }
+  }
+}
 
 export const userSignIn = ({ email, password }: {
   email: string,

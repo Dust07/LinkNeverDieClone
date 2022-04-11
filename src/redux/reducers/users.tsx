@@ -24,16 +24,6 @@ export const usersSlice = createSlice({
       state.isLoading = true
       state.message = action.payload
     },
-    FETCH_USERS_SUCCESS: (state, action) => {
-      state.userData = action.payload
-      state.isLoading = false
-      state.message = null
-    },
-    FETCH_USERS_FAILED: (state, action) => {
-      state.error = action.payload
-      state.isLoading = false
-      state.message = null
-    },
 
     //CREATE
     CREATE_NEW_USER_SUCCESS: (state, action) => {
@@ -68,10 +58,6 @@ export const usersSlice = createSlice({
     },
 
     //UPDATE
-    USER_UPDATE_INIT: (state, action) => {
-      state.isLoading = true
-      state.message = action.payload
-    },
     USER_UPDATE_SUCCESS: (state, action) => {
       state.isLoading = false
       state.message = action.payload
@@ -79,7 +65,16 @@ export const usersSlice = createSlice({
     USER_UPDATE_FAILED: (state, action) => {
       state.isLoading = false
       state.message = action.payload
-    }
+    },
 
+    //DELETE
+    USER_DELETE_SUCCESS: (state, action) => {
+      state.isLoading = false
+      state.message = action.payload
+    },
+    USER_DELETE_FAILED: (state, action) => {
+      state.isLoading = false
+      state.message = action.payload
+    }
   }
 })

@@ -4,7 +4,7 @@ import { auth } from '../../firebase-config';
 import Button from '../../components/Button/Button';
 import Input from '../../components/Input/Input';
 import { useState } from 'react';
-import { updateUserFB } from '../../redux/actions/users-firebase-authenticate';
+import { deleteUserFB, updateUserFB } from '../../redux/actions/users-firebase-authenticate';
 import { useDispatch } from 'react-redux';
 
 function Profile() {
@@ -23,6 +23,10 @@ function Profile() {
 
   const handleConfirmEdit = () => {
     dispatch(updateUserFB({ displayName: newDisplayName, photoURL: newPhotoURL }))
+  }
+
+  const handleDeleteUser = () => {
+    dispatch(deleteUserFB())
   }
 
   return (
@@ -83,6 +87,7 @@ function Profile() {
                 <Button name="Thay đổi" className="login-btn profile-edit-confirm-btn" onClick={() => handleConfirmEdit()}></Button>
                 <Button name="Hủy" className="warning-btn profile-edit-confirm-btn" onClick={() => handleCancelEdit()}></Button>
               </div>
+              <Button name="Xóa tài khoản" className="warning-btn" onClick={() => handleDeleteUser()} />
             </div>
           }
         </div>
