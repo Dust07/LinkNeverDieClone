@@ -5,26 +5,24 @@ import Input from "../../../components/Input/Input"
 import Button from "../../../components/Button/Button"
 import { Link } from "react-router-dom"
 import { useEffect, useState } from 'react'
-import { fetchUsersCheckExist } from '../../../redux/actions/users';
-import { useSelector, useDispatch } from 'react-redux';
+import { userSignIn } from "../../../redux/actions/users-firebase-authenticate"
+import { useDispatch } from "react-redux"
 
 function LoginPage() {
-  const dispatch = useDispatch();
-
-  const [username, setUsername] = useState<string>("")
+  const dispatch = useDispatch()
+  const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
 
-  const handleSubmitLogin = (e: any) => {
+  const handleSubmitLogin = async (e: any) => {
     e.preventDefault();
-    dispatch(fetchUsersCheckExist({
-      username,
+    dispatch(userSignIn({
+      email,
       password
-    }));
-
+    }))
   }
   return (
     <>
@@ -38,8 +36,8 @@ function LoginPage() {
           <div className="login-form-input-wrapper">
             <form className="login-form">
               <Input
-                value={username}
-                onChange={(e) => setUsername((e.target as HTMLTextAreaElement).value)}
+                value={email}
+                onChange={(e) => setEmail((e.target as HTMLTextAreaElement).value)}
                 label="Tên đăng nhập:"
                 name="id"
                 classNameForLabel="login-register-form-label" className="login-register-form-input-field"

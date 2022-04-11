@@ -3,7 +3,6 @@ import "./responsive.scss"
 import { featuresOptions } from "../../mockData/mockdata"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { featuresOptionInterface, OptionsInterface } from "../../interfaces/landingPageInterface"
-
 interface Props {
   category: string
 }

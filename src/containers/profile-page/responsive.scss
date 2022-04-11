@@ -1,0 +1,16 @@
+@import "../../scss/variables";
+
+@media screen and (min-width: $ipad) {
+  .profile-container {
+    display: flex;
+    justify-content: space-around;
+  }
+  .account-summary-container {
+    width: 35%;
+    margin-bottom: 0;
+  }
+
+  .account-detail-container {
+    width: 60%;
+  }
+}

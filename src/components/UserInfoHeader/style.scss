@@ -1,0 +1,84 @@
+@import "../../scss/variables";
+
+.user-info-header {
+    text-align: center;
+    position: relative;
+}
+
+.user-header-img {
+    margin-top: 0.5rem;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.user-header-text {
+    font-weight: 700;
+}
+
+.user-header-options-popup {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: white;
+    height: 100vh;
+    width: 250px;
+    top: 0;
+    right: 0;
+    border-left: $border;
+    z-index: 6;
+}
+
+.user-info-header_popup {
+    text-align: center;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.user-header-img_popup {
+    margin-top: 0.5rem;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.user-header-text_popup {
+    font-weight: 700;
+}
+
+.user-header-option-container {
+    width: 90%;
+    padding-top: 1rem;
+    border-top: $border;
+    align-self: center;
+}
+
+.user-header-option-list {
+    list-style: none;
+    > li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+        cursor: pointer;
+
+        > a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+        }
+        > a:hover {
+            color: $main-blue-color;
+        }
+    }
+    > li:hover {
+        color: $main-blue-color;
+    }
+}
+
+.hide-user-info-popup-container {
+    align-self: center;
+    margin-top: 5rem;
+}

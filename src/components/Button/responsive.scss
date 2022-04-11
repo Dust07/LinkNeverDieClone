@@ -1,8 +1,8 @@
 @import "../../scss/variables";
 
 @media screen and (min-width: $ipad) {
-    .signup-btn {
+    .signup-btn-hidden {
         position: relative;
-        opacity: 1 !important;
+        display: block;
     }
 }

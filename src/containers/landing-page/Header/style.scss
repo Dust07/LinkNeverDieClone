@@ -1,7 +1,7 @@
 @import "../../../scss/variables";
 
 .header-wrapper {
-    width: 100%;
+    width: 90%;
     background: $main-bg-color;
     display: flex;
     justify-content: space-between;
@@ -11,7 +11,6 @@
     width: 60%;
     > a {
         display: flex;
-        justify-content: center;
         align-items: center;
         height: 100%;
         border: none;
