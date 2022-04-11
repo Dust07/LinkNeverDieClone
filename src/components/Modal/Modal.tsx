@@ -17,7 +17,6 @@ function Modal() {
   const normalModal = useSelector((state: any) => state.modal.normalModal)
 
   const handleCloseModal = () => {
-    console.log("asdasd")
     dispatch(modalSlice.actions.HIDE_MODAL())
     if (normalModal)
       navigate("/", { replace: true })

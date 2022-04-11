@@ -23,7 +23,7 @@
     position: fixed;
     background-color: white;
     height: 100vh;
-    width: 50vw;
+    width: 250px;
     top: 0;
     right: 0;
     border-left: $border;
@@ -62,6 +62,16 @@
         gap: 1rem;
         padding: 1rem 0.5rem;
         cursor: pointer;
+
+        > a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+        }
+        > a:hover {
+            color: $main-blue-color;
+        }
     }
     > li:hover {
         color: $main-blue-color;

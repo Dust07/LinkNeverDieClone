@@ -7,31 +7,25 @@ import {
   faWindowClose
 } from '@fortawesome/free-solid-svg-icons'
 import Button from '../Button/Button'
-import { useDispatch } from "react-redux"
-import { usersSlice } from '../../redux/reducers/users'
 import { userSignOut } from '../../redux/actions/users-firebase-authenticate'
-import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { Link, useNavigate } from "react-router-dom"
+import { auth } from "../../firebase-config"
 
 function UserInfoHeader({ displayName = "Default Username", photoURL = "https://picsum.photos/200/300" }: {
   displayName: string | null,
   photoURL?: string
 }) {
-  const dispatch = useDispatch()
-  let navigate = useNavigate();
 
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [showPopup, setShowPopup] = useState<boolean>(false)
 
-  const handleSignOut = async () => {
-    dispatch(usersSlice.actions.FETCH_USER("Fetching"))
-    try {
-      userSignOut()
-      dispatch(usersSlice.actions.USER_SIGN_OUT_SUCCESS("Log out successful."))
-      navigate('/', { replace: true })
-    }
-    catch {
-      dispatch(usersSlice.actions.USER_SIGN_OUT_FAILED("Error occured! Please try to log out again"))
-    }
+  const handleSignOut = () => {
+    navigate("/", { replace: true })
+    dispatch(userSignOut())
   }
+
   return (
     <>
       <div className="user-info-header">
@@ -44,12 +38,14 @@ function UserInfoHeader({ displayName = "Default Username", photoURL = "https://
           <img className="user-header-img_popup" src={photoURL} />
           <p className="user-header-text_popup">{displayName}</p>
         </div>
-
         <div className="user-header-option-container">
           <ul className="user-header-option-list">
             <li>
-              <FontAwesomeIcon icon={faUser} />
-              <p>Profile</p>
+              <Link to={`/profile/${auth.currentUser?.displayName
+                }`}>
+                <FontAwesomeIcon icon={faUser} />
+                <p>Profile</p>
+              </Link>
             </li>
             <li onClick={() => handleSignOut()}>
               <FontAwesomeIcon icon={faWindowClose} />
@@ -62,8 +58,6 @@ function UserInfoHeader({ displayName = "Default Username", photoURL = "https://
         </div>
       </div>
       }
-
-
     </>
 
   )

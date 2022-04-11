@@ -1,0 +1,51 @@
+@import "../../scss/variables";
+
+.profile-container {
+  width: 90%;
+  margin: 1rem 0;
+}
+
+.account-summary-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: white;
+  padding: 2rem 0;
+  border-radius: $border-radius;
+}
+
+.account-detail-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: $border-radius;
+}
+
+.account-detail-title-container {
+  width: 100%;
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2rem;
+}
+
+.account-detail-list {
+  list-style: none;
+  > li {
+    margin: 1rem 0;
+  }
+}
+
+.profile-highlight {
+  font-weight: 700;
+  color: $main-blue-color;
+}
+
+.account-detail-edit-container {
+  width: 100%;
+  text-align: center;
+  margin: 1rem 0;
+}

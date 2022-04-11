@@ -12,10 +12,10 @@ import { useSelector } from 'react-redux';
 
 function Header() {
     const isLoading = useSelector((state: any) => state.users.isLoading)
+    const showModal = useSelector((state: any) => state.modal.isShow)
     const [loginStatus, setLoginStatus] = useState<boolean>(false);
     const [currentUserDisplayName, setCurrentUserDisplayName] = useState<string | null>("Default Statename")
-    console.log("isloading: " + isLoading)
-    console.log("loginStatus: " + loginStatus)
+
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -34,7 +34,7 @@ function Header() {
                 </Link>
             </div>
 
-            {!isLoading && !loginStatus && <div className="header-btn-wrapper">
+            {!isLoading && !loginStatus && !showModal && <div className="header-btn-wrapper">
                 <Link to="/register">
                     <Button name="Đăng ký" className="signup-btn-hidden" />
                 </Link>
@@ -43,7 +43,7 @@ function Header() {
                 </Link>
             </div>}
 
-            {!isLoading && loginStatus && <UserInfoHeader displayName={currentUserDisplayName} />}
+            {!isLoading && loginStatus && !showModal && <UserInfoHeader displayName={currentUserDisplayName} />}
         </div>
     )
 }

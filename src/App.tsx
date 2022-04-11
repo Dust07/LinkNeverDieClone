@@ -8,6 +8,7 @@ import RegisterPage from './containers/login-register-page/register-page/Registe
 import ErrorPage from './containers/error-page/ErrorPage';
 import Loader from './components/Loader/Loader';
 import Modal from './components/Modal/Modal';
+import Profile from './containers/profile-page/Profile';
 
 function App() {
   const isLoading = useSelector((state: any) => state.users.isLoading)
@@ -24,6 +25,7 @@ function App() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
+              <Route path="/profile/:displayName" element={<Profile />} />
               <Route path="*" element={<ErrorPage />} />
             </Routes>
           </Layout>

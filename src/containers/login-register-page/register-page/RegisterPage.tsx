@@ -21,10 +21,9 @@ function RegisterPage() {
       email: newEmail,
       password: newPassword,
       displayName: newUserFullname,
-      photoURL: newPhotoURL,
+      photoURL: "https://picsum.photos/200/300",
       checkPassword: checkPassword
     }))
-
   }
 
   useEffect(() => {
